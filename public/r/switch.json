@@ -8,7 +8,7 @@
   ],
   "registryDependencies": [
     "utils",
-    "http://localhost:3000/r/theme.json"
+    "https://ui.designsbyluca.com/r/theme.json"
   ],
   "files": [
     {

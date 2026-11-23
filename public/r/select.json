@@ -8,8 +8,8 @@
   ],
   "registryDependencies": [
     "utils",
-    "http://localhost:3000/r/theme.json",
-    "http://localhost:3000/r/input.json"
+    "https://ui.designsbyluca.com/r/theme.json",
+    "https://ui.designsbyluca.com/r/input.json"
   ],
   "files": [
     {

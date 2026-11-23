@@ -5,8 +5,8 @@
   "description": "A short note in a corner that leaves by itself. Sonner-style toast() API.",
   "registryDependencies": [
     "utils",
-    "http://localhost:3000/r/theme.json",
-    "http://localhost:3000/r/button.json"
+    "https://ui.designsbyluca.com/r/theme.json",
+    "https://ui.designsbyluca.com/r/button.json"
   ],
   "files": [
     {

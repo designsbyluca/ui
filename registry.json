@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "designsbyluca",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://ui.designsbyluca.com",
   "items": [
     {
       "name": "theme",
@@ -321,7 +321,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -337,8 +337,8 @@
       "description": "A 48px square button with a single line icon.",
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/button.json"
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/button.json"
       ],
       "files": [
         {
@@ -358,7 +358,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -377,7 +377,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -393,7 +393,7 @@
       "description": "A multi-line field in a very fine frame.",
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -412,8 +412,8 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/input.json"
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/input.json"
       ],
       "files": [
         {
@@ -432,7 +432,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -451,7 +451,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -470,7 +470,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -489,7 +489,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -509,7 +509,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -528,7 +528,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -547,7 +547,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -566,7 +566,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -585,7 +585,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -601,8 +601,8 @@
       "description": "A short note in a corner that leaves by itself. Sonner-style toast() API.",
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json",
-        "http://localhost:3000/r/button.json"
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/button.json"
       ],
       "files": [
         {
@@ -621,7 +621,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -640,7 +640,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/theme.json"
+        "https://ui.designsbyluca.com/r/theme.json"
       ],
       "files": [
         {
@@ -957,24 +957,24 @@
       },
       "registryDependencies": [
         "utils",
-        "http://localhost:3000/r/button.json",
-        "http://localhost:3000/r/icon-button.json",
-        "http://localhost:3000/r/link.json",
-        "http://localhost:3000/r/input.json",
-        "http://localhost:3000/r/textarea.json",
-        "http://localhost:3000/r/select.json",
-        "http://localhost:3000/r/checkbox.json",
-        "http://localhost:3000/r/radio-group.json",
-        "http://localhost:3000/r/switch.json",
-        "http://localhost:3000/r/label.json",
-        "http://localhost:3000/r/badge.json",
-        "http://localhost:3000/r/avatar.json",
-        "http://localhost:3000/r/card.json",
-        "http://localhost:3000/r/separator.json",
-        "http://localhost:3000/r/alert.json",
-        "http://localhost:3000/r/toast.json",
-        "http://localhost:3000/r/tooltip.json",
-        "http://localhost:3000/r/dialog.json"
+        "https://ui.designsbyluca.com/r/button.json",
+        "https://ui.designsbyluca.com/r/icon-button.json",
+        "https://ui.designsbyluca.com/r/link.json",
+        "https://ui.designsbyluca.com/r/input.json",
+        "https://ui.designsbyluca.com/r/textarea.json",
+        "https://ui.designsbyluca.com/r/select.json",
+        "https://ui.designsbyluca.com/r/checkbox.json",
+        "https://ui.designsbyluca.com/r/radio-group.json",
+        "https://ui.designsbyluca.com/r/switch.json",
+        "https://ui.designsbyluca.com/r/label.json",
+        "https://ui.designsbyluca.com/r/badge.json",
+        "https://ui.designsbyluca.com/r/avatar.json",
+        "https://ui.designsbyluca.com/r/card.json",
+        "https://ui.designsbyluca.com/r/separator.json",
+        "https://ui.designsbyluca.com/r/alert.json",
+        "https://ui.designsbyluca.com/r/toast.json",
+        "https://ui.designsbyluca.com/r/tooltip.json",
+        "https://ui.designsbyluca.com/r/dialog.json"
       ]
     }
   ]

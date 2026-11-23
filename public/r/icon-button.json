@@ -5,8 +5,8 @@
   "description": "A 48px square button with a single line icon.",
   "registryDependencies": [
     "utils",
-    "http://localhost:3000/r/theme.json",
-    "http://localhost:3000/r/button.json"
+    "https://ui.designsbyluca.com/r/theme.json",
+    "https://ui.designsbyluca.com/r/button.json"
   ],
   "files": [
     {

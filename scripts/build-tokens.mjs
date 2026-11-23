@@ -2,13 +2,13 @@
 // Run with `npm run tokens`. Do not edit either output by hand.
 //
 // REGISTRY_URL is the public address of the built registry (the folder public/r),
-// used for dependencies between items, e.g. https://ui.example.com/r
+// used for dependencies between items. Override it to test against a local server.
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const REGISTRY_URL = (process.env.REGISTRY_URL || "http://localhost:3000/r").replace(/\/$/, "");
+const REGISTRY_URL = (process.env.REGISTRY_URL || "https://ui.designsbyluca.com/r").replace(/\/$/, "");
 const tokens = JSON.parse(readFileSync(join(root, "design-system/tokens.json"), "utf8"));
 
 /* ---------------- colours ---------------- */

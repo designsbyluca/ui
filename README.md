@@ -13,18 +13,18 @@ Type carries the page, images bring the colour, the interface stays out of the w
 
 The components install like shadcn/ui components, straight from the registry. You need a project with Tailwind CSS v4 and a `components.json` (run `npx shadcn@latest init` if you do not have one yet).
 
-The examples below use `REGISTRY` as a stand-in for the registry address, for example `https://ui.example.com/r`.
+The registry lives at `https://ui.designsbyluca.com/r`.
 
 Install everything at once, the theme and all 18 components:
 
 ```bash
-npx shadcn@latest add REGISTRY/all.json
+npx shadcn@latest add https://ui.designsbyluca.com/r/all.json
 ```
 
 Or one component at a time. Name the theme in the same command: shadcn only replaces existing variables such as `--primary` and `--radius` when you ask for a theme directly. A component brings the components it builds on.
 
 ```bash
-npx shadcn@latest add REGISTRY/theme.json REGISTRY/button.json
+npx shadcn@latest add https://ui.designsbyluca.com/r/theme.json https://ui.designsbyluca.com/r/button.json
 ```
 
 If `npx shadcn init` already put its own `button.tsx` in your project, add `--overwrite`.
@@ -32,7 +32,7 @@ If `npx shadcn init` already put its own `button.tsx` in your project, add `--ov
 Only the tokens, to give your existing shadcn/ui components the look:
 
 ```bash
-npx shadcn@latest add REGISTRY/theme.json
+npx shadcn@latest add https://ui.designsbyluca.com/r/theme.json
 ```
 
 ### Fonts
@@ -99,10 +99,10 @@ npm run lint
 - `design-system/` is the exported source: tokens, docs, reference CSS and JS. It is not edited here.
 - `scripts/build-tokens.mjs` generates `app/globals.css` and `registry.json` from `design-system/tokens.json`. Do not edit either by hand.
 - `registry/ui/` holds the components; `public/r/` is the built registry that `npx shadcn add` reads.
-- Set `REGISTRY_URL` to the public address of `public/r` before building for production, so dependencies between items point to the right place:
+- Dependencies between items point to `https://ui.designsbyluca.com/r`. To test against the local dev server, build with a different `REGISTRY_URL`, then build again without it before committing:
 
 ```bash
-REGISTRY_URL=https://ui.example.com/r npm run build
+REGISTRY_URL=http://localhost:3000/r npm run registry
 ```
 
 ## Licence
