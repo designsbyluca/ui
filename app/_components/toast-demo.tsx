@@ -2,8 +2,8 @@
 
 import * as React from "react";
 
-import { Button } from "@/registry/ui/button";
-import { Toaster, toast } from "@/registry/ui/toast";
+import { Button } from "@/registry/designsbyluca/ui/button";
+import { Toaster, toast } from "@/registry/designsbyluca/ui/toast";
 
 /** Inline toaster for the preview: two lasting examples, buttons add more. */
 export function ToastDemo() {

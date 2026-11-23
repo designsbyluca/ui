@@ -7,12 +7,14 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "designsbyluca theme",
-      "description": "Tokens of the designsbyluca design system: colours light and dark, type scale, motion, square corners.",
+      "description": "Tokens of the designsbyluca website system: stone, sand, one orange, lime for the factual tone, light and dark, two tones, type scale, motion.",
       "cssVars": {
         "theme": {
           "color-surface-000": "var(--surface-000)",
           "color-surface-100": "var(--surface-100)",
           "color-surface-200": "var(--surface-200)",
+          "color-sand": "var(--sand)",
+          "color-cream": "var(--cream)",
           "color-surface-inverse": "var(--surface-inverse)",
           "color-glass": "var(--glass)",
           "color-ink": "var(--ink)",
@@ -22,8 +24,15 @@
           "color-ink-unread": "var(--ink-unread)",
           "color-ink-inverse": "var(--ink-inverse)",
           "color-stone": "var(--stone)",
-          "color-ochre": "var(--ochre)",
-          "color-ochre-tint": "var(--ochre-tint)",
+          "color-signal": "var(--signal)",
+          "color-on-signal": "var(--on-signal)",
+          "color-link-signal": "var(--link-signal)",
+          "color-signal-tint": "var(--signal-tint)",
+          "color-dot": "var(--dot)",
+          "color-go": "var(--go)",
+          "color-highlight": "var(--highlight)",
+          "color-on-highlight": "var(--on-highlight)",
+          "color-highlight-tint": "var(--highlight-tint)",
           "color-red": "var(--red)",
           "color-red-tint": "var(--red-tint)",
           "color-on-media": "var(--on-media)",
@@ -51,18 +60,25 @@
           "color-border": "var(--border)",
           "color-input": "var(--input)",
           "color-ring": "var(--ring)",
-          "color-mark": "var(--mark)",
-          "color-mark-tint": "var(--mark-tint)",
-          "radius-xs": "var(--radius)",
-          "radius-sm": "var(--radius)",
-          "radius-md": "var(--radius)",
-          "radius-lg": "var(--radius)",
-          "radius-xl": "var(--radius)",
-          "radius-2xl": "var(--radius)",
+          "radius-none": "0px",
+          "radius-xs": "2px",
+          "radius-sm": "4px",
+          "radius-md": "8px",
+          "radius-lg": "12px",
+          "radius-xl": "16px",
+          "radius-2xl": "20px",
           "radius-pill": "999px",
           "font-sans": "var(--font-inter-tight, \"Helvetica Neue\"), \"Helvetica Neue\", Arial, sans-serif",
-          "font-serif": "var(--font-newsreader, \"Times New Roman\"), \"Times New Roman\", serif",
+          "font-serif": "var(--font-cormorant, \"Times New Roman\"), \"Times New Roman\", serif",
+          "font-serif-text": "var(--font-newsreader, Georgia), Georgia, serif",
           "font-mono": "var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace",
+          "color-mark": "var(--mark)",
+          "color-mark-foreground": "var(--mark-foreground)",
+          "color-mark-tint": "var(--mark-tint)",
+          "radius-control": "var(--control-radius)",
+          "radius-surface": "var(--surface-radius)",
+          "radius-kicker": "var(--kicker-radius)",
+          "font-control": "var(--control-font)",
           "ease-entrance": "cubic-bezier(0.22, 1, 0.36, 1)",
           "ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
           "ease-loop": "cubic-bezier(0.42, 0, 0.58, 1)",
@@ -75,24 +91,24 @@
           "animate-fade-fast": "fade var(--dur-fast) cubic-bezier(0.25, 0.1, 0.25, 1) both",
           "text-display-wordmark": "288px",
           "text-display-wordmark--line-height": "240px",
-          "text-display-wordmark--letter-spacing": "-11.52px",
-          "text-display-wordmark--font-weight": "470",
+          "text-display-wordmark--letter-spacing": "-8.64px",
+          "text-display-wordmark--font-weight": "480",
           "text-display-xl": "120px",
           "text-display-xl--line-height": "114px",
-          "text-display-xl--letter-spacing": "-4.8px",
-          "text-display-xl--font-weight": "470",
+          "text-display-xl--letter-spacing": "-4.80px",
+          "text-display-xl--font-weight": "480",
           "text-headline-xl": "72px",
           "text-headline-xl--line-height": "72px",
           "text-headline-xl--letter-spacing": "-2.88px",
-          "text-headline-xl--font-weight": "470",
+          "text-headline-xl--font-weight": "480",
           "text-headline": "48px",
           "text-headline--line-height": "50px",
-          "text-headline--letter-spacing": "-1.68px",
-          "text-headline--font-weight": "470",
+          "text-headline--letter-spacing": "-1.44px",
+          "text-headline--font-weight": "480",
           "text-feature-title": "40px",
           "text-feature-title--line-height": "42px",
           "text-feature-title--letter-spacing": "-1.2px",
-          "text-feature-title--font-weight": "470",
+          "text-feature-title--font-weight": "480",
           "text-display-serif": "64px",
           "text-display-serif--line-height": "64px",
           "text-display-serif--letter-spacing": "2.56px",
@@ -100,23 +116,23 @@
           "text-numeral": "120px",
           "text-numeral--line-height": "96px",
           "text-numeral--letter-spacing": "-4.8px",
-          "text-numeral--font-weight": "470",
+          "text-numeral--font-weight": "480",
           "text-section-title": "48px",
           "text-section-title--line-height": "50px",
-          "text-section-title--letter-spacing": "-1.68px",
-          "text-section-title--font-weight": "470",
+          "text-section-title--letter-spacing": "-1.44px",
+          "text-section-title--font-weight": "480",
           "text-lead": "22px",
           "text-lead--line-height": "32px",
           "text-lead--letter-spacing": "-0.22px",
-          "text-lead--font-weight": "420",
+          "text-lead--font-weight": "450",
           "text-card-title": "28px",
           "text-card-title--line-height": "32px",
           "text-card-title--letter-spacing": "-0.7px",
-          "text-card-title--font-weight": "470",
+          "text-card-title--font-weight": "480",
           "text-stat": "40px",
           "text-stat--line-height": "40px",
           "text-stat--letter-spacing": "-1.2px",
-          "text-stat--font-weight": "470",
+          "text-stat--font-weight": "480",
           "text-letter": "24px",
           "text-letter--line-height": "32px",
           "text-letter--letter-spacing": "0px",
@@ -124,7 +140,7 @@
           "text-quote": "20px",
           "text-quote--line-height": "29px",
           "text-quote--letter-spacing": "-0.2px",
-          "text-quote--font-weight": "420",
+          "text-quote--font-weight": "450",
           "text-input-text": "19px",
           "text-input-text--line-height": "26px",
           "text-input-text--letter-spacing": "-0.19px",
@@ -132,19 +148,19 @@
           "text-body": "16px",
           "text-body--line-height": "25px",
           "text-body--letter-spacing": "-0.08px",
-          "text-body--font-weight": "420",
+          "text-body--font-weight": "450",
           "text-label": "15px",
           "text-label--line-height": "20px",
-          "text-label--letter-spacing": "-0.08px",
+          "text-label--letter-spacing": "0.15px",
           "text-label--font-weight": "500",
           "text-small": "14px",
           "text-small--line-height": "20px",
           "text-small--letter-spacing": "0px",
-          "text-small--font-weight": "420",
+          "text-small--font-weight": "450",
           "text-field-label": "13px",
           "text-field-label--line-height": "18px",
           "text-field-label--letter-spacing": "0px",
-          "text-field-label--font-weight": "420",
+          "text-field-label--font-weight": "450",
           "text-badge": "11.5px",
           "text-badge--line-height": "14px",
           "text-badge--letter-spacing": "0.92px",
@@ -153,63 +169,76 @@
           "text-eyebrow--line-height": "20px",
           "text-eyebrow--letter-spacing": "2.1px",
           "text-eyebrow--font-weight": "400",
-          "text-caption": "12px",
+          "text-caption": "11px",
           "text-caption--line-height": "16px",
-          "text-caption--letter-spacing": "1.68px",
+          "text-caption--letter-spacing": "0.88px",
           "text-caption--font-weight": "400"
         },
         "light": {
-          "surface-000": "#fbfaf8",
-          "surface-100": "#f2f0ec",
-          "surface-200": "#e8e5df",
+          "surface-000": "#ffffff",
+          "surface-100": "#f5f5f4",
+          "surface-200": "#e7e5e4",
+          "sand": "#dbd4ca",
+          "cream": "#f6f1e7",
           "surface-inverse": "#0f0e0d",
-          "glass": "rgba(251, 250, 248, 0.78)",
-          "ink": "#1b1916",
-          "ink-hover": "#3a3530",
-          "ink-muted": "#6a645e",
-          "ink-display-muted": "#8f8982",
-          "ink-unread": "#d5d1cb",
-          "ink-inverse": "#fbfaf8",
-          "stone": "#a39d96",
-          "ochre": "#8a6420",
-          "ochre-tint": "#f1e7d3",
-          "red": "#8f2a24",
-          "red-tint": "#f3e1de",
-          "on-media": "#fbfaf8",
-          "on-media-ink": "#1b1916",
-          "hairline": "rgba(27, 25, 22, 0.14)",
-          "hairline-strong": "rgba(27, 25, 22, 0.32)",
-          "background": "#fbfaf8",
-          "foreground": "#1b1916",
-          "card": "#f2f0ec",
-          "card-foreground": "#1b1916",
-          "popover": "#fbfaf8",
-          "popover-foreground": "#1b1916",
-          "primary": "#1b1916",
-          "primary-foreground": "#fbfaf8",
-          "primary-hover": "#3a3530",
-          "secondary": "#f2f0ec",
-          "secondary-foreground": "#1b1916",
-          "muted": "#f2f0ec",
-          "muted-foreground": "#6a645e",
-          "accent": "#f2f0ec",
-          "accent-foreground": "#1b1916",
-          "destructive": "#8f2a24",
-          "destructive-foreground": "#fbfaf8",
-          "destructive-text": "#8f2a24",
-          "border": "rgba(27, 25, 22, 0.14)",
-          "input": "rgba(27, 25, 22, 0.32)",
-          "ring": "#8a6420",
-          "mark": "#8a6420",
-          "mark-tint": "#f1e7d3",
+          "glass": "rgba(255, 255, 255, 0.78)",
+          "ink": "#1c1917",
+          "ink-hover": "#44403c",
+          "ink-muted": "#6b6560",
+          "ink-display-muted": "#857f79",
+          "ink-unread": "#d6d3d1",
+          "ink-inverse": "#ffffff",
+          "stone": "#a8a29e",
+          "signal": "#f97316",
+          "on-signal": "#1c1917",
+          "link-signal": "#c2410c",
+          "signal-tint": "#ffedd5",
+          "dot": "#eab308",
+          "go": "#16a34a",
+          "highlight": "#d4f25c",
+          "on-highlight": "#1c1917",
+          "highlight-tint": "#f1fbd2",
+          "red": "#a5281e",
+          "red-tint": "#fbe7e4",
+          "on-media": "#ffffff",
+          "on-media-ink": "#1c1917",
+          "hairline": "rgba(28, 25, 23, 0.12)",
+          "hairline-strong": "rgba(28, 25, 23, 0.32)",
+          "background": "#ffffff",
+          "foreground": "#1c1917",
+          "card": "#f5f5f4",
+          "card-foreground": "#1c1917",
+          "popover": "#ffffff",
+          "popover-foreground": "#1c1917",
+          "primary": "#1c1917",
+          "primary-foreground": "#ffffff",
+          "primary-hover": "#44403c",
+          "secondary": "#f5f5f4",
+          "secondary-foreground": "#1c1917",
+          "muted": "#f5f5f4",
+          "muted-foreground": "#6b6560",
+          "accent": "#f5f5f4",
+          "accent-foreground": "#1c1917",
+          "destructive": "#a5281e",
+          "destructive-foreground": "#ffffff",
+          "destructive-text": "#a5281e",
+          "border": "rgba(28, 25, 23, 0.12)",
+          "input": "rgba(28, 25, 23, 0.32)",
+          "ring": "#1c1917",
           "space-1": "4px",
           "space-2": "8px",
           "space-3": "16px",
           "space-4": "32px",
           "space-5": "64px",
           "space-6": "144px",
-          "radius": "0px",
+          "radius": "8px",
           "radius-none": "0px",
+          "radius-xs": "2px",
+          "radius-sm": "4px",
+          "radius-md": "8px",
+          "radius-lg": "12px",
+          "radius-xl": "16px",
+          "radius-2xl": "20px",
           "radius-pill": "999px",
           "dur-fast": "150ms",
           "dur-base": "300ms",
@@ -240,48 +269,55 @@
         },
         "dark": {
           "surface-000": "#0f0e0d",
-          "surface-100": "#1b1916",
-          "surface-200": "#2a2622",
+          "surface-100": "#1c1917",
+          "surface-200": "#292524",
+          "sand": "#3a332c",
+          "cream": "#26211b",
           "surface-inverse": "#0f0e0d",
           "glass": "rgba(15, 14, 13, 0.78)",
-          "ink": "#f2f0ec",
-          "ink-hover": "#d9d5ce",
-          "ink-muted": "#a6a09a",
-          "ink-display-muted": "#7d7771",
-          "ink-unread": "#45403b",
-          "ink-inverse": "#fbfaf8",
-          "stone": "#58524c",
-          "ochre": "#d1a65c",
-          "ochre-tint": "#2e2414",
-          "red": "#b0402f",
+          "ink": "#f5f5f4",
+          "ink-hover": "#d6d3d1",
+          "ink-muted": "#a8a29e",
+          "ink-display-muted": "#78716c",
+          "ink-unread": "#44403c",
+          "ink-inverse": "#ffffff",
+          "stone": "#57534e",
+          "signal": "#f97316",
+          "on-signal": "#1c1917",
+          "link-signal": "#fb923c",
+          "signal-tint": "#3b2412",
+          "dot": "#eab308",
+          "go": "#22c55e",
+          "highlight": "#d4f25c",
+          "on-highlight": "#1c1917",
+          "highlight-tint": "#26300f",
+          "red": "#c2412f",
           "red-tint": "#2a1513",
-          "on-media": "#fbfaf8",
-          "on-media-ink": "#1b1916",
-          "hairline": "rgba(242, 240, 236, 0.14)",
-          "hairline-strong": "rgba(242, 240, 236, 0.32)",
+          "on-media": "#ffffff",
+          "on-media-ink": "#1c1917",
+          "hairline": "rgba(245, 245, 244, 0.14)",
+          "hairline-strong": "rgba(245, 245, 244, 0.34)",
           "background": "#0f0e0d",
-          "foreground": "#f2f0ec",
-          "card": "#1b1916",
-          "card-foreground": "#f2f0ec",
-          "popover": "#1b1916",
-          "popover-foreground": "#f2f0ec",
-          "primary": "#f2f0ec",
+          "foreground": "#f5f5f4",
+          "card": "#1c1917",
+          "card-foreground": "#f5f5f4",
+          "popover": "#1c1917",
+          "popover-foreground": "#f5f5f4",
+          "primary": "#f5f5f4",
           "primary-foreground": "#0f0e0d",
-          "primary-hover": "#d9d5ce",
-          "secondary": "#2a2622",
-          "secondary-foreground": "#f2f0ec",
-          "muted": "#1b1916",
-          "muted-foreground": "#a6a09a",
-          "accent": "#2a2622",
-          "accent-foreground": "#f2f0ec",
-          "destructive": "#b0402f",
-          "destructive-foreground": "#fbfaf8",
-          "destructive-text": "#f2f0ec",
-          "border": "rgba(242, 240, 236, 0.14)",
-          "input": "rgba(242, 240, 236, 0.32)",
-          "ring": "#d1a65c",
-          "mark": "#d1a65c",
-          "mark-tint": "#2e2414"
+          "primary-hover": "#d6d3d1",
+          "secondary": "#292524",
+          "secondary-foreground": "#f5f5f4",
+          "muted": "#1c1917",
+          "muted-foreground": "#a8a29e",
+          "accent": "#292524",
+          "accent-foreground": "#f5f5f4",
+          "destructive": "#c2412f",
+          "destructive-foreground": "#ffffff",
+          "destructive-text": "#f5f5f4",
+          "border": "rgba(245, 245, 244, 0.14)",
+          "input": "rgba(245, 245, 244, 0.34)",
+          "ring": "#f5f5f4"
         }
       },
       "css": {
@@ -303,9 +339,38 @@
             "opacity": "1"
           }
         },
+        "@keyframes marquee": {
+          "to": {
+            "transform": "translateX(-50%)"
+          }
+        },
+        ":root, [data-tone=\"calm\"]": {
+          "--mark": "var(--signal)",
+          "--mark-foreground": "var(--on-signal)",
+          "--mark-tint": "var(--signal-tint)",
+          "--control-radius": "999px",
+          "--surface-radius": "8px",
+          "--kicker-radius": "999px",
+          "--control-font": "var(--font-inter-tight, \"Helvetica Neue\"), \"Helvetica Neue\", Arial, sans-serif",
+          "--control-case": "none",
+          "--control-tracking": "0.01em",
+          "--control-size": "15px"
+        },
+        "[data-tone=\"factual\"]": {
+          "--mark": "var(--highlight)",
+          "--mark-foreground": "var(--on-highlight)",
+          "--mark-tint": "var(--highlight-tint)",
+          "--control-radius": "4px",
+          "--surface-radius": "16px",
+          "--kicker-radius": "2px",
+          "--control-font": "var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace",
+          "--control-case": "uppercase",
+          "--control-tracking": "0.06em",
+          "--control-size": "13px"
+        },
         "@layer base": {
           "body": {
-            "font-weight": "420"
+            "font-weight": "450"
           }
         }
       }
@@ -314,7 +379,7 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "A 48px square button with a verb as its label.",
+      "description": "A 48px button with a verb as its label: a pill (calm) or mono capitals (factual).",
       "dependencies": [
         "radix-ui",
         "class-variance-authority"
@@ -325,7 +390,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/button.tsx",
+          "path": "registry/designsbyluca/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -334,7 +399,7 @@
       "name": "icon-button",
       "type": "registry:ui",
       "title": "IconButton",
-      "description": "A 48px square button with a single line icon.",
+      "description": "A 48px button with a single line icon.",
       "registryDependencies": [
         "utils",
         "https://ui.designsbyluca.com/r/theme.json",
@@ -342,7 +407,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/icon-button.tsx",
+          "path": "registry/designsbyluca/ui/icon-button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -362,7 +427,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/link.tsx",
+          "path": "registry/designsbyluca/ui/link.tsx",
           "type": "registry:ui"
         }
       ]
@@ -381,7 +446,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/input.tsx",
+          "path": "registry/designsbyluca/ui/input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -397,7 +462,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/textarea.tsx",
+          "path": "registry/designsbyluca/ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]
@@ -417,7 +482,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/select.tsx",
+          "path": "registry/designsbyluca/ui/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -426,7 +491,7 @@
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
-      "description": "A 20px square for yes/no choices.",
+      "description": "A 20px box for yes/no choices.",
       "dependencies": [
         "radix-ui"
       ],
@@ -436,7 +501,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/checkbox.tsx",
+          "path": "registry/designsbyluca/ui/checkbox.tsx",
           "type": "registry:ui"
         }
       ]
@@ -455,7 +520,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/radio-group.tsx",
+          "path": "registry/designsbyluca/ui/radio-group.tsx",
           "type": "registry:ui"
         }
       ]
@@ -464,7 +529,7 @@
       "name": "switch",
       "type": "registry:ui",
       "title": "Switch",
-      "description": "An on/off toggle: a 44 × 24px rectangle with a square thumb.",
+      "description": "An on/off toggle, 44 × 24px.",
       "dependencies": [
         "radix-ui"
       ],
@@ -474,7 +539,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/switch.tsx",
+          "path": "registry/designsbyluca/ui/switch.tsx",
           "type": "registry:ui"
         }
       ]
@@ -493,7 +558,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/label.tsx",
+          "path": "registry/designsbyluca/ui/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -502,7 +567,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
-      "description": "A small square label in capitals. Also exported as Tag.",
+      "description": "A small label in capitals. Also exported as Tag.",
       "dependencies": [
         "radix-ui",
         "class-variance-authority"
@@ -513,7 +578,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/badge.tsx",
+          "path": "registry/designsbyluca/ui/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -532,7 +597,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/avatar.tsx",
+          "path": "registry/designsbyluca/ui/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -541,7 +606,7 @@
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
-      "description": "A quiet surface, or editorial with the image above.",
+      "description": "A quiet surface, a service tile on sand, or editorial with the image above.",
       "dependencies": [
         "class-variance-authority"
       ],
@@ -551,7 +616,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/card.tsx",
+          "path": "registry/designsbyluca/ui/card.tsx",
           "type": "registry:ui"
         }
       ]
@@ -570,7 +635,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/separator.tsx",
+          "path": "registry/designsbyluca/ui/separator.tsx",
           "type": "registry:ui"
         }
       ]
@@ -579,7 +644,7 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
-      "description": "A message in the page flow: the square, a title and one or two sentences.",
+      "description": "A message in the page flow: a dot, a title and one or two sentences.",
       "dependencies": [
         "class-variance-authority"
       ],
@@ -589,7 +654,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/alert.tsx",
+          "path": "registry/designsbyluca/ui/alert.tsx",
           "type": "registry:ui"
         }
       ]
@@ -606,7 +671,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/toast.tsx",
+          "path": "registry/designsbyluca/ui/toast.tsx",
           "type": "registry:ui"
         }
       ]
@@ -625,7 +690,7 @@
       ],
       "files": [
         {
-          "path": "registry/ui/tooltip.tsx",
+          "path": "registry/designsbyluca/ui/tooltip.tsx",
           "type": "registry:ui"
         }
       ]
@@ -644,21 +709,206 @@
       ],
       "files": [
         {
-          "path": "registry/ui/dialog.tsx",
+          "path": "registry/designsbyluca/ui/dialog.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "photo",
+      "type": "registry:ui",
+      "title": "Photo",
+      "description": "A photo, or a calm placeholder until there is one.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/ui/photo.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kicker",
+      "type": "registry:ui",
+      "title": "Kicker",
+      "description": "A short label above a feature title: serif capitals with a dot, or mono on lime.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/ui/kicker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:block",
+      "title": "Hero",
+      "description": "One statement per screen; with an image the full-screen photo hero with white pills.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/photo.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/hero.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "wordmark",
+      "type": "registry:block",
+      "title": "Wordmark",
+      "description": "The name set very large, as hero or as a close above the footer.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/wordmark.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "nav-bar",
+      "type": "registry:block",
+      "title": "NavBar",
+      "description": "The header: normal, over a photo, sticky, or floating.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/nav-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "feature-tiles",
+      "type": "registry:block",
+      "title": "FeatureTiles",
+      "description": "Services as tiles in one grid with hairline gaps.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/feature-tiles.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "feature-stack",
+      "type": "registry:block",
+      "title": "FeatureStack",
+      "description": "Service sections that stick and slide over each other on scroll.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/kicker.json",
+        "https://ui.designsbyluca.com/r/photo.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/feature-stack.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "stat-tiles",
+      "type": "registry:block",
+      "title": "StatTiles",
+      "description": "Real numbers in muted square tiles.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/photo.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/stat-tiles.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-rail",
+      "type": "registry:block",
+      "title": "TestimonialRail",
+      "description": "A slow rail of quote cards and photos.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/photo.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/testimonial-rail.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "case-story",
+      "type": "registry:block",
+      "title": "CaseStory",
+      "description": "A full-screen story of a project in slides.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json",
+        "https://ui.designsbyluca.com/r/photo.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/case-story.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:block",
+      "title": "Footer",
+      "description": "Link columns, copyright and legal links.",
+      "registryDependencies": [
+        "utils",
+        "https://ui.designsbyluca.com/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/designsbyluca/blocks/footer.tsx",
+          "type": "registry:component"
         }
       ]
     },
     {
       "name": "all",
       "type": "registry:theme",
-      "title": "All components",
-      "description": "The theme and all 18 free components at once.",
+      "title": "Everything",
+      "description": "The theme, all components and all website blocks at once.",
       "cssVars": {
         "theme": {
           "color-surface-000": "var(--surface-000)",
           "color-surface-100": "var(--surface-100)",
           "color-surface-200": "var(--surface-200)",
+          "color-sand": "var(--sand)",
+          "color-cream": "var(--cream)",
           "color-surface-inverse": "var(--surface-inverse)",
           "color-glass": "var(--glass)",
           "color-ink": "var(--ink)",
@@ -668,8 +918,15 @@
           "color-ink-unread": "var(--ink-unread)",
           "color-ink-inverse": "var(--ink-inverse)",
           "color-stone": "var(--stone)",
-          "color-ochre": "var(--ochre)",
-          "color-ochre-tint": "var(--ochre-tint)",
+          "color-signal": "var(--signal)",
+          "color-on-signal": "var(--on-signal)",
+          "color-link-signal": "var(--link-signal)",
+          "color-signal-tint": "var(--signal-tint)",
+          "color-dot": "var(--dot)",
+          "color-go": "var(--go)",
+          "color-highlight": "var(--highlight)",
+          "color-on-highlight": "var(--on-highlight)",
+          "color-highlight-tint": "var(--highlight-tint)",
           "color-red": "var(--red)",
           "color-red-tint": "var(--red-tint)",
           "color-on-media": "var(--on-media)",
@@ -697,18 +954,25 @@
           "color-border": "var(--border)",
           "color-input": "var(--input)",
           "color-ring": "var(--ring)",
-          "color-mark": "var(--mark)",
-          "color-mark-tint": "var(--mark-tint)",
-          "radius-xs": "var(--radius)",
-          "radius-sm": "var(--radius)",
-          "radius-md": "var(--radius)",
-          "radius-lg": "var(--radius)",
-          "radius-xl": "var(--radius)",
-          "radius-2xl": "var(--radius)",
+          "radius-none": "0px",
+          "radius-xs": "2px",
+          "radius-sm": "4px",
+          "radius-md": "8px",
+          "radius-lg": "12px",
+          "radius-xl": "16px",
+          "radius-2xl": "20px",
           "radius-pill": "999px",
           "font-sans": "var(--font-inter-tight, \"Helvetica Neue\"), \"Helvetica Neue\", Arial, sans-serif",
-          "font-serif": "var(--font-newsreader, \"Times New Roman\"), \"Times New Roman\", serif",
+          "font-serif": "var(--font-cormorant, \"Times New Roman\"), \"Times New Roman\", serif",
+          "font-serif-text": "var(--font-newsreader, Georgia), Georgia, serif",
           "font-mono": "var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace",
+          "color-mark": "var(--mark)",
+          "color-mark-foreground": "var(--mark-foreground)",
+          "color-mark-tint": "var(--mark-tint)",
+          "radius-control": "var(--control-radius)",
+          "radius-surface": "var(--surface-radius)",
+          "radius-kicker": "var(--kicker-radius)",
+          "font-control": "var(--control-font)",
           "ease-entrance": "cubic-bezier(0.22, 1, 0.36, 1)",
           "ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
           "ease-loop": "cubic-bezier(0.42, 0, 0.58, 1)",
@@ -721,24 +985,24 @@
           "animate-fade-fast": "fade var(--dur-fast) cubic-bezier(0.25, 0.1, 0.25, 1) both",
           "text-display-wordmark": "288px",
           "text-display-wordmark--line-height": "240px",
-          "text-display-wordmark--letter-spacing": "-11.52px",
-          "text-display-wordmark--font-weight": "470",
+          "text-display-wordmark--letter-spacing": "-8.64px",
+          "text-display-wordmark--font-weight": "480",
           "text-display-xl": "120px",
           "text-display-xl--line-height": "114px",
-          "text-display-xl--letter-spacing": "-4.8px",
-          "text-display-xl--font-weight": "470",
+          "text-display-xl--letter-spacing": "-4.80px",
+          "text-display-xl--font-weight": "480",
           "text-headline-xl": "72px",
           "text-headline-xl--line-height": "72px",
           "text-headline-xl--letter-spacing": "-2.88px",
-          "text-headline-xl--font-weight": "470",
+          "text-headline-xl--font-weight": "480",
           "text-headline": "48px",
           "text-headline--line-height": "50px",
-          "text-headline--letter-spacing": "-1.68px",
-          "text-headline--font-weight": "470",
+          "text-headline--letter-spacing": "-1.44px",
+          "text-headline--font-weight": "480",
           "text-feature-title": "40px",
           "text-feature-title--line-height": "42px",
           "text-feature-title--letter-spacing": "-1.2px",
-          "text-feature-title--font-weight": "470",
+          "text-feature-title--font-weight": "480",
           "text-display-serif": "64px",
           "text-display-serif--line-height": "64px",
           "text-display-serif--letter-spacing": "2.56px",
@@ -746,23 +1010,23 @@
           "text-numeral": "120px",
           "text-numeral--line-height": "96px",
           "text-numeral--letter-spacing": "-4.8px",
-          "text-numeral--font-weight": "470",
+          "text-numeral--font-weight": "480",
           "text-section-title": "48px",
           "text-section-title--line-height": "50px",
-          "text-section-title--letter-spacing": "-1.68px",
-          "text-section-title--font-weight": "470",
+          "text-section-title--letter-spacing": "-1.44px",
+          "text-section-title--font-weight": "480",
           "text-lead": "22px",
           "text-lead--line-height": "32px",
           "text-lead--letter-spacing": "-0.22px",
-          "text-lead--font-weight": "420",
+          "text-lead--font-weight": "450",
           "text-card-title": "28px",
           "text-card-title--line-height": "32px",
           "text-card-title--letter-spacing": "-0.7px",
-          "text-card-title--font-weight": "470",
+          "text-card-title--font-weight": "480",
           "text-stat": "40px",
           "text-stat--line-height": "40px",
           "text-stat--letter-spacing": "-1.2px",
-          "text-stat--font-weight": "470",
+          "text-stat--font-weight": "480",
           "text-letter": "24px",
           "text-letter--line-height": "32px",
           "text-letter--letter-spacing": "0px",
@@ -770,7 +1034,7 @@
           "text-quote": "20px",
           "text-quote--line-height": "29px",
           "text-quote--letter-spacing": "-0.2px",
-          "text-quote--font-weight": "420",
+          "text-quote--font-weight": "450",
           "text-input-text": "19px",
           "text-input-text--line-height": "26px",
           "text-input-text--letter-spacing": "-0.19px",
@@ -778,19 +1042,19 @@
           "text-body": "16px",
           "text-body--line-height": "25px",
           "text-body--letter-spacing": "-0.08px",
-          "text-body--font-weight": "420",
+          "text-body--font-weight": "450",
           "text-label": "15px",
           "text-label--line-height": "20px",
-          "text-label--letter-spacing": "-0.08px",
+          "text-label--letter-spacing": "0.15px",
           "text-label--font-weight": "500",
           "text-small": "14px",
           "text-small--line-height": "20px",
           "text-small--letter-spacing": "0px",
-          "text-small--font-weight": "420",
+          "text-small--font-weight": "450",
           "text-field-label": "13px",
           "text-field-label--line-height": "18px",
           "text-field-label--letter-spacing": "0px",
-          "text-field-label--font-weight": "420",
+          "text-field-label--font-weight": "450",
           "text-badge": "11.5px",
           "text-badge--line-height": "14px",
           "text-badge--letter-spacing": "0.92px",
@@ -799,63 +1063,76 @@
           "text-eyebrow--line-height": "20px",
           "text-eyebrow--letter-spacing": "2.1px",
           "text-eyebrow--font-weight": "400",
-          "text-caption": "12px",
+          "text-caption": "11px",
           "text-caption--line-height": "16px",
-          "text-caption--letter-spacing": "1.68px",
+          "text-caption--letter-spacing": "0.88px",
           "text-caption--font-weight": "400"
         },
         "light": {
-          "surface-000": "#fbfaf8",
-          "surface-100": "#f2f0ec",
-          "surface-200": "#e8e5df",
+          "surface-000": "#ffffff",
+          "surface-100": "#f5f5f4",
+          "surface-200": "#e7e5e4",
+          "sand": "#dbd4ca",
+          "cream": "#f6f1e7",
           "surface-inverse": "#0f0e0d",
-          "glass": "rgba(251, 250, 248, 0.78)",
-          "ink": "#1b1916",
-          "ink-hover": "#3a3530",
-          "ink-muted": "#6a645e",
-          "ink-display-muted": "#8f8982",
-          "ink-unread": "#d5d1cb",
-          "ink-inverse": "#fbfaf8",
-          "stone": "#a39d96",
-          "ochre": "#8a6420",
-          "ochre-tint": "#f1e7d3",
-          "red": "#8f2a24",
-          "red-tint": "#f3e1de",
-          "on-media": "#fbfaf8",
-          "on-media-ink": "#1b1916",
-          "hairline": "rgba(27, 25, 22, 0.14)",
-          "hairline-strong": "rgba(27, 25, 22, 0.32)",
-          "background": "#fbfaf8",
-          "foreground": "#1b1916",
-          "card": "#f2f0ec",
-          "card-foreground": "#1b1916",
-          "popover": "#fbfaf8",
-          "popover-foreground": "#1b1916",
-          "primary": "#1b1916",
-          "primary-foreground": "#fbfaf8",
-          "primary-hover": "#3a3530",
-          "secondary": "#f2f0ec",
-          "secondary-foreground": "#1b1916",
-          "muted": "#f2f0ec",
-          "muted-foreground": "#6a645e",
-          "accent": "#f2f0ec",
-          "accent-foreground": "#1b1916",
-          "destructive": "#8f2a24",
-          "destructive-foreground": "#fbfaf8",
-          "destructive-text": "#8f2a24",
-          "border": "rgba(27, 25, 22, 0.14)",
-          "input": "rgba(27, 25, 22, 0.32)",
-          "ring": "#8a6420",
-          "mark": "#8a6420",
-          "mark-tint": "#f1e7d3",
+          "glass": "rgba(255, 255, 255, 0.78)",
+          "ink": "#1c1917",
+          "ink-hover": "#44403c",
+          "ink-muted": "#6b6560",
+          "ink-display-muted": "#857f79",
+          "ink-unread": "#d6d3d1",
+          "ink-inverse": "#ffffff",
+          "stone": "#a8a29e",
+          "signal": "#f97316",
+          "on-signal": "#1c1917",
+          "link-signal": "#c2410c",
+          "signal-tint": "#ffedd5",
+          "dot": "#eab308",
+          "go": "#16a34a",
+          "highlight": "#d4f25c",
+          "on-highlight": "#1c1917",
+          "highlight-tint": "#f1fbd2",
+          "red": "#a5281e",
+          "red-tint": "#fbe7e4",
+          "on-media": "#ffffff",
+          "on-media-ink": "#1c1917",
+          "hairline": "rgba(28, 25, 23, 0.12)",
+          "hairline-strong": "rgba(28, 25, 23, 0.32)",
+          "background": "#ffffff",
+          "foreground": "#1c1917",
+          "card": "#f5f5f4",
+          "card-foreground": "#1c1917",
+          "popover": "#ffffff",
+          "popover-foreground": "#1c1917",
+          "primary": "#1c1917",
+          "primary-foreground": "#ffffff",
+          "primary-hover": "#44403c",
+          "secondary": "#f5f5f4",
+          "secondary-foreground": "#1c1917",
+          "muted": "#f5f5f4",
+          "muted-foreground": "#6b6560",
+          "accent": "#f5f5f4",
+          "accent-foreground": "#1c1917",
+          "destructive": "#a5281e",
+          "destructive-foreground": "#ffffff",
+          "destructive-text": "#a5281e",
+          "border": "rgba(28, 25, 23, 0.12)",
+          "input": "rgba(28, 25, 23, 0.32)",
+          "ring": "#1c1917",
           "space-1": "4px",
           "space-2": "8px",
           "space-3": "16px",
           "space-4": "32px",
           "space-5": "64px",
           "space-6": "144px",
-          "radius": "0px",
+          "radius": "8px",
           "radius-none": "0px",
+          "radius-xs": "2px",
+          "radius-sm": "4px",
+          "radius-md": "8px",
+          "radius-lg": "12px",
+          "radius-xl": "16px",
+          "radius-2xl": "20px",
           "radius-pill": "999px",
           "dur-fast": "150ms",
           "dur-base": "300ms",
@@ -886,48 +1163,55 @@
         },
         "dark": {
           "surface-000": "#0f0e0d",
-          "surface-100": "#1b1916",
-          "surface-200": "#2a2622",
+          "surface-100": "#1c1917",
+          "surface-200": "#292524",
+          "sand": "#3a332c",
+          "cream": "#26211b",
           "surface-inverse": "#0f0e0d",
           "glass": "rgba(15, 14, 13, 0.78)",
-          "ink": "#f2f0ec",
-          "ink-hover": "#d9d5ce",
-          "ink-muted": "#a6a09a",
-          "ink-display-muted": "#7d7771",
-          "ink-unread": "#45403b",
-          "ink-inverse": "#fbfaf8",
-          "stone": "#58524c",
-          "ochre": "#d1a65c",
-          "ochre-tint": "#2e2414",
-          "red": "#b0402f",
+          "ink": "#f5f5f4",
+          "ink-hover": "#d6d3d1",
+          "ink-muted": "#a8a29e",
+          "ink-display-muted": "#78716c",
+          "ink-unread": "#44403c",
+          "ink-inverse": "#ffffff",
+          "stone": "#57534e",
+          "signal": "#f97316",
+          "on-signal": "#1c1917",
+          "link-signal": "#fb923c",
+          "signal-tint": "#3b2412",
+          "dot": "#eab308",
+          "go": "#22c55e",
+          "highlight": "#d4f25c",
+          "on-highlight": "#1c1917",
+          "highlight-tint": "#26300f",
+          "red": "#c2412f",
           "red-tint": "#2a1513",
-          "on-media": "#fbfaf8",
-          "on-media-ink": "#1b1916",
-          "hairline": "rgba(242, 240, 236, 0.14)",
-          "hairline-strong": "rgba(242, 240, 236, 0.32)",
+          "on-media": "#ffffff",
+          "on-media-ink": "#1c1917",
+          "hairline": "rgba(245, 245, 244, 0.14)",
+          "hairline-strong": "rgba(245, 245, 244, 0.34)",
           "background": "#0f0e0d",
-          "foreground": "#f2f0ec",
-          "card": "#1b1916",
-          "card-foreground": "#f2f0ec",
-          "popover": "#1b1916",
-          "popover-foreground": "#f2f0ec",
-          "primary": "#f2f0ec",
+          "foreground": "#f5f5f4",
+          "card": "#1c1917",
+          "card-foreground": "#f5f5f4",
+          "popover": "#1c1917",
+          "popover-foreground": "#f5f5f4",
+          "primary": "#f5f5f4",
           "primary-foreground": "#0f0e0d",
-          "primary-hover": "#d9d5ce",
-          "secondary": "#2a2622",
-          "secondary-foreground": "#f2f0ec",
-          "muted": "#1b1916",
-          "muted-foreground": "#a6a09a",
-          "accent": "#2a2622",
-          "accent-foreground": "#f2f0ec",
-          "destructive": "#b0402f",
-          "destructive-foreground": "#fbfaf8",
-          "destructive-text": "#f2f0ec",
-          "border": "rgba(242, 240, 236, 0.14)",
-          "input": "rgba(242, 240, 236, 0.32)",
-          "ring": "#d1a65c",
-          "mark": "#d1a65c",
-          "mark-tint": "#2e2414"
+          "primary-hover": "#d6d3d1",
+          "secondary": "#292524",
+          "secondary-foreground": "#f5f5f4",
+          "muted": "#1c1917",
+          "muted-foreground": "#a8a29e",
+          "accent": "#292524",
+          "accent-foreground": "#f5f5f4",
+          "destructive": "#c2412f",
+          "destructive-foreground": "#ffffff",
+          "destructive-text": "#f5f5f4",
+          "border": "rgba(245, 245, 244, 0.14)",
+          "input": "rgba(245, 245, 244, 0.34)",
+          "ring": "#f5f5f4"
         }
       },
       "css": {
@@ -949,9 +1233,38 @@
             "opacity": "1"
           }
         },
+        "@keyframes marquee": {
+          "to": {
+            "transform": "translateX(-50%)"
+          }
+        },
+        ":root, [data-tone=\"calm\"]": {
+          "--mark": "var(--signal)",
+          "--mark-foreground": "var(--on-signal)",
+          "--mark-tint": "var(--signal-tint)",
+          "--control-radius": "999px",
+          "--surface-radius": "8px",
+          "--kicker-radius": "999px",
+          "--control-font": "var(--font-inter-tight, \"Helvetica Neue\"), \"Helvetica Neue\", Arial, sans-serif",
+          "--control-case": "none",
+          "--control-tracking": "0.01em",
+          "--control-size": "15px"
+        },
+        "[data-tone=\"factual\"]": {
+          "--mark": "var(--highlight)",
+          "--mark-foreground": "var(--on-highlight)",
+          "--mark-tint": "var(--highlight-tint)",
+          "--control-radius": "4px",
+          "--surface-radius": "16px",
+          "--kicker-radius": "2px",
+          "--control-font": "var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace",
+          "--control-case": "uppercase",
+          "--control-tracking": "0.06em",
+          "--control-size": "13px"
+        },
         "@layer base": {
           "body": {
-            "font-weight": "420"
+            "font-weight": "450"
           }
         }
       },
@@ -974,7 +1287,18 @@
         "https://ui.designsbyluca.com/r/alert.json",
         "https://ui.designsbyluca.com/r/toast.json",
         "https://ui.designsbyluca.com/r/tooltip.json",
-        "https://ui.designsbyluca.com/r/dialog.json"
+        "https://ui.designsbyluca.com/r/dialog.json",
+        "https://ui.designsbyluca.com/r/photo.json",
+        "https://ui.designsbyluca.com/r/kicker.json",
+        "https://ui.designsbyluca.com/r/hero.json",
+        "https://ui.designsbyluca.com/r/wordmark.json",
+        "https://ui.designsbyluca.com/r/nav-bar.json",
+        "https://ui.designsbyluca.com/r/feature-tiles.json",
+        "https://ui.designsbyluca.com/r/feature-stack.json",
+        "https://ui.designsbyluca.com/r/stat-tiles.json",
+        "https://ui.designsbyluca.com/r/testimonial-rail.json",
+        "https://ui.designsbyluca.com/r/case-story.json",
+        "https://ui.designsbyluca.com/r/footer.json"
       ]
     }
   ]

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kicker",
+  "title": "Kicker",
+  "description": "A short label above a feature title: serif capitals with a dot, or mono on lime.",
+  "registryDependencies": [
+    "utils",
+    "https://ui.designsbyluca.com/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/designsbyluca/ui/kicker.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * A short label above a feature title, one or two words. Not clickable.\n * Calm tone: Cormorant capitals with the yellow dot in front.\n * Factual tone (data-tone=\"factual\"): mono capitals on lime, radius-xs.\n */\nfunction Kicker({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"kicker\"\n      className={cn(\n        \"inline-flex w-fit items-center gap-2.5 font-serif text-[15px] leading-5 font-medium tracking-[0.14em] text-foreground uppercase\",\n        \"before:size-2 before:rounded-full before:bg-dot before:content-['']\",\n        \"in-data-[tone=factual]:rounded-kicker in-data-[tone=factual]:bg-mark in-data-[tone=factual]:px-2 in-data-[tone=factual]:py-1\",\n        \"in-data-[tone=factual]:font-mono in-data-[tone=factual]:text-[11px] in-data-[tone=factual]:leading-4 in-data-[tone=factual]:font-medium in-data-[tone=factual]:tracking-[0.08em] in-data-[tone=factual]:text-mark-foreground\",\n        \"in-data-[tone=factual]:before:hidden\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Kicker };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

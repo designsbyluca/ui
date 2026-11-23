@@ -53,13 +53,23 @@ const typeVars = Object.fromEntries(
 
 const themeVars = {
   ...Object.fromEntries(colors.map((t) => [`color-${t.name}`, `var(--${t.name})`])),
-  // Square: every rounded-* is 0. rounded-full stays round for avatars and radios.
-  ...Object.fromEntries(["xs", "sm", "md", "lg", "xl", "2xl"].map((s) => [`radius-${s}`, "var(--radius)"])),
-  "radius-pill": "999px",
+  // The radius scale of the style: xs 2, sm 4, md 8, lg 12, xl 16, 2xl 20, pill.
+  ...Object.fromEntries(
+    tokens.radius.tokens.filter((r) => r.name !== "radius").map((r) => [r.name, r.value])
+  ),
   // The fallback sits inside var(): a missing variable would otherwise void the whole list.
   "font-sans": 'var(--font-inter-tight, "Helvetica Neue"), "Helvetica Neue", Arial, sans-serif',
-  "font-serif": 'var(--font-newsreader, "Times New Roman"), "Times New Roman", serif',
+  "font-serif": 'var(--font-cormorant, "Times New Roman"), "Times New Roman", serif',
+  "font-serif-text": "var(--font-newsreader, Georgia), Georgia, serif",
   "font-mono": "var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace",
+  // The tone accent and the tone-dependent control shape (see the tone block below).
+  "color-mark": "var(--mark)",
+  "color-mark-foreground": "var(--mark-foreground)",
+  "color-mark-tint": "var(--mark-tint)",
+  "radius-control": "var(--control-radius)",
+  "radius-surface": "var(--surface-radius)",
+  "radius-kicker": "var(--kicker-radius)",
+  "font-control": "var(--control-font)",
   // Literal values (not var()) so they never point at themselves.
   ...Object.fromEntries(Object.entries(ease).map(([k, v]) => [k, v])),
   ...Object.fromEntries(Object.entries(shadows).map(([k, v]) => [k, v])),
@@ -70,6 +80,24 @@ const themeVars = {
   ...typeVars,
 };
 
+/* ---------------- tones ---------------- */
+
+const dashed = (vars) => Object.fromEntries(Object.entries(vars).map(([k, v]) => [`--${k}`, v]));
+
+// Font references are resolved to the stacks: @theme inline does not emit --font-* variables.
+const fontStack = (v) => v.replace(/var\(--font-(sans|serif|mono)\)/g, (_, f) => themeVars[`font-${f}`]);
+const toneVars = (id) =>
+  Object.fromEntries(tokens.tone.tokens.map((t) => [t.name, fontStack(t.value[id])]));
+const toneCss = `/* Tones: calm (default) and factual. Set data-tone on <html>; never mix both on one page. */
+:root,
+[data-tone="calm"] {
+${block(toneVars("calm"))}
+}
+
+[data-tone="factual"] {
+${block(toneVars("factual"))}
+}`;
+
 const extraCss = `@keyframes rise {
   from { opacity: 0; transform: translateY(var(--rise-sm)); }
   to { opacity: 1; transform: none; }
@@ -77,6 +105,9 @@ const extraCss = `@keyframes rise {
 @keyframes fade {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,7 +118,7 @@ const extraCss = `@keyframes rise {
   }
 }`;
 
-const block = (vars) => Object.entries(vars).map(([k, v]) => `  --${k}: ${v};`).join("\n");
+function block(vars) { return Object.entries(vars).map(([k, v]) => `  --${k}: ${v};`).join("\n"); }
 
 /* ---------------- app/globals.css ---------------- */
 
@@ -115,6 +146,8 @@ ${colorLines("dark").join("\n")}
 ${block(themeVars)}
 }
 
+${toneCss}
+
 ${extraCss}
 
 @layer base {
@@ -124,7 +157,7 @@ ${extraCss}
   body {
     margin: 0;
     font-family: var(--font-sans);
-    font-weight: 420;
+    font-weight: 450;
     background: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;
@@ -142,7 +175,7 @@ const theme = {
   name: "theme",
   type: "registry:theme",
   title: "designsbyluca theme",
-  description: "Tokens of the designsbyluca design system: colours light and dark, type scale, motion, square corners.",
+  description: "Tokens of the designsbyluca website system: stone, sand, one orange, lime for the factual tone, light and dark, two tones, type scale, motion.",
   cssVars: {
     theme: themeVars,
     light: { ...lightVars, ...shared },
@@ -154,30 +187,49 @@ const theme = {
       to: { opacity: "1", transform: "none" },
     },
     "@keyframes fade": { from: { opacity: "0" }, to: { opacity: "1" } },
-    "@layer base": { body: { "font-weight": "420" } },
+    "@keyframes marquee": { to: { transform: "translateX(-50%)" } },
+    // Custom properties need their dashes here; in globals.css block() adds them.
+    ':root, [data-tone="calm"]': dashed(toneVars("calm")),
+    '[data-tone="factual"]': dashed(toneVars("factual")),
+    "@layer base": { body: { "font-weight": "450" } },
   },
 };
 
 // name, title, description (from the component READMEs), npm deps, registry deps (own items)
 const components = [
-  ["button", "Button", "A 48px square button with a verb as its label.", ["radix-ui", "class-variance-authority"], []],
-  ["icon-button", "IconButton", "A 48px square button with a single line icon.", [], ["button"]],
+  ["button", "Button", "A 48px button with a verb as its label: a pill (calm) or mono capitals (factual).", ["radix-ui", "class-variance-authority"], []],
+  ["icon-button", "IconButton", "A 48px button with a single line icon.", [], ["button"]],
   ["link", "Link", "A text link with a 1px line below that thickens to 2px on hover.", ["radix-ui", "class-variance-authority"], []],
   ["input", "Input", "A text field with lots of room and a single line below.", ["class-variance-authority"], []],
   ["textarea", "Textarea", "A multi-line field in a very fine frame.", [], []],
   ["select", "Select", "A single choice from a short list; the trigger looks like an Input.", ["radix-ui"], ["input"]],
-  ["checkbox", "Checkbox", "A 20px square for yes/no choices.", ["radix-ui"], []],
+  ["checkbox", "Checkbox", "A 20px box for yes/no choices.", ["radix-ui"], []],
   ["radio-group", "RadioGroup", "One choice from a few visible options: a circle with a dot.", ["radix-ui"], []],
-  ["switch", "Switch", "An on/off toggle: a 44 × 24px rectangle with a square thumb.", ["radix-ui"], []],
+  ["switch", "Switch", "An on/off toggle, 44 × 24px.", ["radix-ui"], []],
   ["label", "Label", "The name of a form control, with Field, OptionRow, FieldHint and FieldError.", ["radix-ui"], []],
-  ["badge", "Badge", "A small square label in capitals. Also exported as Tag.", ["radix-ui", "class-variance-authority"], []],
+  ["badge", "Badge", "A small label in capitals. Also exported as Tag.", ["radix-ui", "class-variance-authority"], []],
   ["avatar", "Avatar", "A picture of a person, with initials as fallback.", ["radix-ui"], []],
-  ["card", "Card", "A quiet surface, or editorial with the image above.", ["class-variance-authority"], []],
+  ["card", "Card", "A quiet surface, a service tile on sand, or editorial with the image above.", ["class-variance-authority"], []],
   ["separator", "Separator", "A 1px hairline between groups.", ["radix-ui"], []],
-  ["alert", "Alert", "A message in the page flow: the square, a title and one or two sentences.", ["class-variance-authority"], []],
+  ["alert", "Alert", "A message in the page flow: a dot, a title and one or two sentences.", ["class-variance-authority"], []],
   ["toast", "Toast", "A short note in a corner that leaves by itself. Sonner-style toast() API.", [], ["button"]],
   ["tooltip", "Tooltip", "A short hint on hover or keyboard focus.", ["radix-ui"], []],
   ["dialog", "Dialog", "A modal window for a short task.", ["radix-ui"], []],
+  ["photo", "Photo", "A photo, or a calm placeholder until there is one.", [], []],
+  ["kicker", "Kicker", "A short label above a feature title: serif capitals with a dot, or mono on lime.", [], []],
+];
+
+// Website blocks: name, title, description, own registry deps.
+const blocks = [
+  ["hero", "Hero", "One statement per screen; with an image the full-screen photo hero with white pills.", ["photo"]],
+  ["wordmark", "Wordmark", "The name set very large, as hero or as a close above the footer.", []],
+  ["nav-bar", "NavBar", "The header: normal, over a photo, sticky, or floating.", ["button"]],
+  ["feature-tiles", "FeatureTiles", "Services as tiles in one grid with hairline gaps.", []],
+  ["feature-stack", "FeatureStack", "Service sections that stick and slide over each other on scroll.", ["kicker", "photo"]],
+  ["stat-tiles", "StatTiles", "Real numbers in muted square tiles.", ["photo"]],
+  ["testimonial-rail", "TestimonialRail", "A slow rail of quote cards and photos.", ["photo"]],
+  ["case-story", "CaseStory", "A full-screen story of a project in slides.", ["photo"]],
+  ["footer", "Footer", "Link columns, copyright and legal links.", []],
 ];
 
 const items = [
@@ -189,16 +241,24 @@ const items = [
     description,
     ...(dependencies.length ? { dependencies } : {}),
     registryDependencies: ["utils", `${REGISTRY_URL}/theme.json`, ...own.map((d) => `${REGISTRY_URL}/${d}.json`)],
-    files: [{ path: `registry/ui/${name}.tsx`, type: "registry:ui" }],
+    files: [{ path: `registry/designsbyluca/ui/${name}.tsx`, type: "registry:ui" }],
+  })),
+  ...blocks.map(([name, title, description, own]) => ({
+    name,
+    type: "registry:block",
+    title,
+    description,
+    registryDependencies: ["utils", `${REGISTRY_URL}/theme.json`, ...own.map((d) => `${REGISTRY_URL}/${d}.json`)],
+    files: [{ path: `registry/designsbyluca/blocks/${name}.tsx`, type: "registry:component" }],
   })),
   // A theme item itself: shadcn only overwrites existing variables (--primary, --radius …)
   // when the item you ask for is a theme, so `add all.json` sets everything in one go.
   {
     ...theme,
     name: "all",
-    title: "All components",
-    description: "The theme and all 18 free components at once.",
-    registryDependencies: ["utils", ...components.map(([n]) => `${REGISTRY_URL}/${n}.json`)],
+    title: "Everything",
+    description: "The theme, all components and all website blocks at once.",
+    registryDependencies: ["utils", ...[...components, ...blocks].map(([n]) => `${REGISTRY_URL}/${n}.json`)],
   },
 ];
 
@@ -212,5 +272,5 @@ writeFileSync(join(root, "registry.json"), JSON.stringify(registry, null, 2) + "
 
 console.log(
   `globals.css + registry.json: ${colors.length} colours, ${Object.keys(shared).length} shared tokens, ` +
-    `${Object.keys(typeVars).length / 4} type styles, ${components.length} components, base ${REGISTRY_URL}`
+    `${Object.keys(typeVars).length / 4} type styles, ${components.length} components, ${blocks.length} blocks, base ${REGISTRY_URL}`
 );

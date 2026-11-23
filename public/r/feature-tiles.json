@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-tiles",
+  "title": "FeatureTiles",
+  "description": "Services as tiles in one grid with hairline gaps.",
+  "registryDependencies": [
+    "utils",
+    "https://ui.designsbyluca.com/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/designsbyluca/blocks/feature-tiles.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/*\n * FeatureTiles: services or features as square-cornered tiles joined in one\n * grid with 1px hairline gaps. A number at the top (serif capitals; mono in\n * the factual tone), a title and one sentence at the bottom.\n *\n * Tones per tile: muted (default), stone, sand, inverse (near-black, at most\n * one per row) and accent (the tone's orange or lime, at most one in four).\n */\n\ntype TileTone = \"muted\" | \"stone\" | \"sand\" | \"inverse\" | \"accent\";\n\ninterface FeatureTile {\n  title: React.ReactNode;\n  text?: React.ReactNode;\n  tone?: TileTone;\n}\n\ninterface FeatureTilesProps extends React.ComponentProps<\"div\"> {\n  items: FeatureTile[];\n  /** Columns from 900px up (default 4); 2 below 900px, 1 below 520px. */\n  columns?: number;\n}\n\nconst tone: Record<TileTone, { tile: string; text: string; number: string }> = {\n  muted: { tile: \"bg-surface-100 text-foreground\", text: \"text-muted-foreground\", number: \"text-muted-foreground\" },\n  stone: { tile: \"bg-surface-200 text-foreground\", text: \"text-foreground\", number: \"text-foreground\" },\n  sand: { tile: \"bg-sand text-foreground\", text: \"text-foreground\", number: \"text-foreground\" },\n  inverse: { tile: \"bg-surface-inverse text-ink-inverse\", text: \"text-white/75\", number: \"text-white/75\" },\n  accent: { tile: \"bg-mark text-mark-foreground\", text: \"text-mark-foreground\", number: \"text-mark-foreground\" },\n};\n\nfunction FeatureTiles({ items, columns = 4, className, style, ...props }: FeatureTilesProps) {\n  return (\n    <div\n      data-slot=\"feature-tiles\"\n      className={cn(\n        \"grid grid-cols-1 gap-px bg-border min-[520px]:grid-cols-2 min-[900px]:grid-cols-(--tile-columns)\",\n        className\n      )}\n      style={{ \"--tile-columns\": `repeat(${columns}, minmax(0, 1fr))`, ...style } as React.CSSProperties}\n      {...props}\n    >\n      {items.map((item, i) => {\n        const t = tone[item.tone ?? \"muted\"];\n        return (\n          <div\n            key={i}\n            data-slot=\"feature-tile\"\n            className={cn(\"flex min-h-[240px] flex-col justify-between gap-12 rounded-none p-8 min-[520px]:min-h-[320px] md:min-h-[380px]\", t.tile)}\n          >\n            <span\n              className={cn(\n                \"font-serif text-[17px] leading-5 font-medium tracking-[0.12em] uppercase [font-variant-numeric:lining-nums]\",\n                \"in-data-[tone=factual]:font-mono in-data-[tone=factual]:text-[12px] in-data-[tone=factual]:tracking-[0.06em]\",\n                t.number\n              )}\n            >\n              {String(i + 1).padStart(2, \"0\")}\n            </span>\n            <div className=\"grid gap-3\">\n              <h3 className=\"m-0 text-[28px] leading-8 font-[480] tracking-[-0.025em]\">{item.title}</h3>\n              {item.text && <p className={cn(\"m-0 max-w-[24em] text-base leading-6\", t.text)}>{item.text}</p>}\n            </div>\n          </div>\n        );\n      })}\n    </div>\n  );\n}\n\nexport { FeatureTiles, type FeatureTilesProps, type FeatureTile };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:block"
+}

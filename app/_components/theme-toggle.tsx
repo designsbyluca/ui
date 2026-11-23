@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { Button } from "@/registry/ui/button";
+import { Button } from "@/registry/designsbyluca/ui/button";
 
 function subscribe(onChange: () => void) {
   const observer = new MutationObserver(onChange);

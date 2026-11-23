@@ -1,0 +1,17 @@
+<!-- @dsCard group="Pro · Content" height=560 subtitle="With animate: staggered entrance" width=1200 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hero</title></head>
+<body>
+<div id="root"></div>
+<script>
+var S = window.DesignsByLuca, h = React.createElement;
+function Demo() {
+  var k = React.useState(0);
+  return h('div', null,
+    h(S.Hero, { key: k[0], animate: true, title: 'Hello.', muted: 'I am Alex.', lead: 'I design websites for people and companies – clear, calm and coded by hand.' },
+      h('div', { className: 'sg-row' }, h(S.Button, null, 'Request a quote'), h(S.Button, { variant: 'outline' }, 'View work'))),
+    h('div', { style: { padding: '0 64px 24px' } }, h(S.Button, { variant: 'outline', onClick: function () { k[1](k[0] + 1); } }, 'Play again')));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body></html>

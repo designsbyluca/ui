@@ -1,0 +1,14 @@
+<!-- @dsCard group="Pro · Portfolio" height=560 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CaseStory</title></head>
+<body>
+<div id="root"></div>
+<script>
+var S = window.DesignsByLuca, h = React.createElement;
+function Demo() { return h('div', { className: 'sg-pad' }, h(S.CaseStory, { inline: true, duration: 3500, slides: [
+  { title: 'Calm. Fast.', caption: 'Client • Website • 2026' },
+  { text: 'The old site was slow and hard to read on a phone.' },
+  { text: 'Now it loads in under a second and shows the work, not effects.', bg: '#2a2622' } ] })); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body></html>

@@ -8,26 +8,35 @@
 @custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --surface-000: #fbfaf8;
-  --surface-100: #f2f0ec;
-  --surface-200: #e8e5df;
+  --surface-000: #ffffff;
+  --surface-100: #f5f5f4;
+  --surface-200: #e7e5e4;
+  --sand: #dbd4ca;
+  --cream: #f6f1e7;
   --surface-inverse: #0f0e0d;
-  --glass: rgba(251, 250, 248, 0.78);
-  --ink: #1b1916;
-  --ink-hover: #3a3530;
-  --ink-muted: #6a645e;
-  --ink-display-muted: #8f8982;
-  --ink-unread: #d5d1cb;
-  --ink-inverse: #fbfaf8;
-  --stone: #a39d96;
-  --ochre: #8a6420;
-  --ochre-tint: #f1e7d3;
-  --red: #8f2a24;
-  --red-tint: #f3e1de;
-  --on-media: #fbfaf8;
-  --on-media-ink: #1b1916;
-  --hairline: rgba(27, 25, 22, 0.14);
-  --hairline-strong: rgba(27, 25, 22, 0.32);
+  --glass: rgba(255, 255, 255, 0.78);
+  --ink: #1c1917;
+  --ink-hover: #44403c;
+  --ink-muted: #6b6560;
+  --ink-display-muted: #857f79;
+  --ink-unread: #d6d3d1;
+  --ink-inverse: #ffffff;
+  --stone: #a8a29e;
+  --signal: #f97316;
+  --on-signal: #1c1917;
+  --link-signal: #c2410c;
+  --signal-tint: #ffedd5;
+  --dot: #eab308;
+  --go: #16a34a;
+  --highlight: #d4f25c;
+  --on-highlight: #1c1917;
+  --highlight-tint: #f1fbd2;
+  --red: #a5281e;
+  --red-tint: #fbe7e4;
+  --on-media: #ffffff;
+  --on-media-ink: #1c1917;
+  --hairline: rgba(28, 25, 23, 0.12);
+  --hairline-strong: rgba(28, 25, 23, 0.32);
   --background: var(--surface-000);
   --foreground: var(--ink);
   --card: var(--surface-100);
@@ -44,13 +53,11 @@
   --accent: var(--surface-100);
   --accent-foreground: var(--ink);
   --destructive: var(--red);
-  --destructive-foreground: #fbfaf8;
+  --destructive-foreground: #ffffff;
   --destructive-text: var(--red);
   --border: var(--hairline);
   --input: var(--hairline-strong);
-  --ring: var(--ochre);
-  --mark: var(--ochre);
-  --mark-tint: var(--ochre-tint);
+  --ring: var(--ink);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -58,8 +65,14 @@
   --space-4: 32px;
   --space-5: 64px;
   --space-6: 144px;
-  --radius: 0px;
+  --radius: 8px;
   --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
   --radius-pill: 999px;
   --dur-fast: 150ms;
   --dur-base: 300ms;
@@ -92,25 +105,34 @@
 .dark,
 [data-theme="dark"] {
   --surface-000: #0f0e0d;
-  --surface-100: #1b1916;
-  --surface-200: #2a2622;
+  --surface-100: #1c1917;
+  --surface-200: #292524;
+  --sand: #3a332c;
+  --cream: #26211b;
   --surface-inverse: #0f0e0d;
   --glass: rgba(15, 14, 13, 0.78);
-  --ink: #f2f0ec;
-  --ink-hover: #d9d5ce;
-  --ink-muted: #a6a09a;
-  --ink-display-muted: #7d7771;
-  --ink-unread: #45403b;
-  --ink-inverse: #fbfaf8;
-  --stone: #58524c;
-  --ochre: #d1a65c;
-  --ochre-tint: #2e2414;
-  --red: #b0402f;
+  --ink: #f5f5f4;
+  --ink-hover: #d6d3d1;
+  --ink-muted: #a8a29e;
+  --ink-display-muted: #78716c;
+  --ink-unread: #44403c;
+  --ink-inverse: #ffffff;
+  --stone: #57534e;
+  --signal: #f97316;
+  --on-signal: #1c1917;
+  --link-signal: #fb923c;
+  --signal-tint: #3b2412;
+  --dot: #eab308;
+  --go: #22c55e;
+  --highlight: #d4f25c;
+  --on-highlight: #1c1917;
+  --highlight-tint: #26300f;
+  --red: #c2412f;
   --red-tint: #2a1513;
-  --on-media: #fbfaf8;
-  --on-media-ink: #1b1916;
-  --hairline: rgba(242, 240, 236, 0.14);
-  --hairline-strong: rgba(242, 240, 236, 0.32);
+  --on-media: #ffffff;
+  --on-media-ink: #1c1917;
+  --hairline: rgba(245, 245, 244, 0.14);
+  --hairline-strong: rgba(245, 245, 244, 0.34);
   --background: var(--surface-000);
   --foreground: var(--ink);
   --card: var(--surface-100);
@@ -127,19 +149,19 @@
   --accent: var(--surface-200);
   --accent-foreground: var(--ink);
   --destructive: var(--red);
-  --destructive-foreground: #fbfaf8;
+  --destructive-foreground: #ffffff;
   --destructive-text: var(--ink);
   --border: var(--hairline);
   --input: var(--hairline-strong);
-  --ring: var(--ochre);
-  --mark: var(--ochre);
-  --mark-tint: var(--ochre-tint);
+  --ring: var(--ink);
 }
 
 @theme inline {
   --color-surface-000: var(--surface-000);
   --color-surface-100: var(--surface-100);
   --color-surface-200: var(--surface-200);
+  --color-sand: var(--sand);
+  --color-cream: var(--cream);
   --color-surface-inverse: var(--surface-inverse);
   --color-glass: var(--glass);
   --color-ink: var(--ink);
@@ -149,8 +171,15 @@
   --color-ink-unread: var(--ink-unread);
   --color-ink-inverse: var(--ink-inverse);
   --color-stone: var(--stone);
-  --color-ochre: var(--ochre);
-  --color-ochre-tint: var(--ochre-tint);
+  --color-signal: var(--signal);
+  --color-on-signal: var(--on-signal);
+  --color-link-signal: var(--link-signal);
+  --color-signal-tint: var(--signal-tint);
+  --color-dot: var(--dot);
+  --color-go: var(--go);
+  --color-highlight: var(--highlight);
+  --color-on-highlight: var(--on-highlight);
+  --color-highlight-tint: var(--highlight-tint);
   --color-red: var(--red);
   --color-red-tint: var(--red-tint);
   --color-on-media: var(--on-media);
@@ -178,18 +207,25 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-mark: var(--mark);
-  --color-mark-tint: var(--mark-tint);
-  --radius-xs: var(--radius);
-  --radius-sm: var(--radius);
-  --radius-md: var(--radius);
-  --radius-lg: var(--radius);
-  --radius-xl: var(--radius);
-  --radius-2xl: var(--radius);
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
   --radius-pill: 999px;
   --font-sans: var(--font-inter-tight, "Helvetica Neue"), "Helvetica Neue", Arial, sans-serif;
-  --font-serif: var(--font-newsreader, "Times New Roman"), "Times New Roman", serif;
+  --font-serif: var(--font-cormorant, "Times New Roman"), "Times New Roman", serif;
+  --font-serif-text: var(--font-newsreader, Georgia), Georgia, serif;
   --font-mono: var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace;
+  --color-mark: var(--mark);
+  --color-mark-foreground: var(--mark-foreground);
+  --color-mark-tint: var(--mark-tint);
+  --radius-control: var(--control-radius);
+  --radius-surface: var(--surface-radius);
+  --radius-kicker: var(--kicker-radius);
+  --font-control: var(--control-font);
   --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-loop: cubic-bezier(0.42, 0, 0.58, 1);
@@ -202,24 +238,24 @@
   --animate-fade-fast: fade var(--dur-fast) cubic-bezier(0.25, 0.1, 0.25, 1) both;
   --text-display-wordmark: 288px;
   --text-display-wordmark--line-height: 240px;
-  --text-display-wordmark--letter-spacing: -11.52px;
-  --text-display-wordmark--font-weight: 470;
+  --text-display-wordmark--letter-spacing: -8.64px;
+  --text-display-wordmark--font-weight: 480;
   --text-display-xl: 120px;
   --text-display-xl--line-height: 114px;
-  --text-display-xl--letter-spacing: -4.8px;
-  --text-display-xl--font-weight: 470;
+  --text-display-xl--letter-spacing: -4.80px;
+  --text-display-xl--font-weight: 480;
   --text-headline-xl: 72px;
   --text-headline-xl--line-height: 72px;
   --text-headline-xl--letter-spacing: -2.88px;
-  --text-headline-xl--font-weight: 470;
+  --text-headline-xl--font-weight: 480;
   --text-headline: 48px;
   --text-headline--line-height: 50px;
-  --text-headline--letter-spacing: -1.68px;
-  --text-headline--font-weight: 470;
+  --text-headline--letter-spacing: -1.44px;
+  --text-headline--font-weight: 480;
   --text-feature-title: 40px;
   --text-feature-title--line-height: 42px;
   --text-feature-title--letter-spacing: -1.2px;
-  --text-feature-title--font-weight: 470;
+  --text-feature-title--font-weight: 480;
   --text-display-serif: 64px;
   --text-display-serif--line-height: 64px;
   --text-display-serif--letter-spacing: 2.56px;
@@ -227,23 +263,23 @@
   --text-numeral: 120px;
   --text-numeral--line-height: 96px;
   --text-numeral--letter-spacing: -4.8px;
-  --text-numeral--font-weight: 470;
+  --text-numeral--font-weight: 480;
   --text-section-title: 48px;
   --text-section-title--line-height: 50px;
-  --text-section-title--letter-spacing: -1.68px;
-  --text-section-title--font-weight: 470;
+  --text-section-title--letter-spacing: -1.44px;
+  --text-section-title--font-weight: 480;
   --text-lead: 22px;
   --text-lead--line-height: 32px;
   --text-lead--letter-spacing: -0.22px;
-  --text-lead--font-weight: 420;
+  --text-lead--font-weight: 450;
   --text-card-title: 28px;
   --text-card-title--line-height: 32px;
   --text-card-title--letter-spacing: -0.7px;
-  --text-card-title--font-weight: 470;
+  --text-card-title--font-weight: 480;
   --text-stat: 40px;
   --text-stat--line-height: 40px;
   --text-stat--letter-spacing: -1.2px;
-  --text-stat--font-weight: 470;
+  --text-stat--font-weight: 480;
   --text-letter: 24px;
   --text-letter--line-height: 32px;
   --text-letter--letter-spacing: 0px;
@@ -251,7 +287,7 @@
   --text-quote: 20px;
   --text-quote--line-height: 29px;
   --text-quote--letter-spacing: -0.2px;
-  --text-quote--font-weight: 420;
+  --text-quote--font-weight: 450;
   --text-input-text: 19px;
   --text-input-text--line-height: 26px;
   --text-input-text--letter-spacing: -0.19px;
@@ -259,19 +295,19 @@
   --text-body: 16px;
   --text-body--line-height: 25px;
   --text-body--letter-spacing: -0.08px;
-  --text-body--font-weight: 420;
+  --text-body--font-weight: 450;
   --text-label: 15px;
   --text-label--line-height: 20px;
-  --text-label--letter-spacing: -0.08px;
+  --text-label--letter-spacing: 0.15px;
   --text-label--font-weight: 500;
   --text-small: 14px;
   --text-small--line-height: 20px;
   --text-small--letter-spacing: 0px;
-  --text-small--font-weight: 420;
+  --text-small--font-weight: 450;
   --text-field-label: 13px;
   --text-field-label--line-height: 18px;
   --text-field-label--letter-spacing: 0px;
-  --text-field-label--font-weight: 420;
+  --text-field-label--font-weight: 450;
   --text-badge: 11.5px;
   --text-badge--line-height: 14px;
   --text-badge--letter-spacing: 0.92px;
@@ -280,10 +316,38 @@
   --text-eyebrow--line-height: 20px;
   --text-eyebrow--letter-spacing: 2.1px;
   --text-eyebrow--font-weight: 400;
-  --text-caption: 12px;
+  --text-caption: 11px;
   --text-caption--line-height: 16px;
-  --text-caption--letter-spacing: 1.68px;
+  --text-caption--letter-spacing: 0.88px;
   --text-caption--font-weight: 400;
+}
+
+/* Tones: calm (default) and factual. Set data-tone on <html>; never mix both on one page. */
+:root,
+[data-tone="calm"] {
+  --mark: var(--signal);
+  --mark-foreground: var(--on-signal);
+  --mark-tint: var(--signal-tint);
+  --control-radius: 999px;
+  --surface-radius: 8px;
+  --kicker-radius: 999px;
+  --control-font: var(--font-inter-tight, "Helvetica Neue"), "Helvetica Neue", Arial, sans-serif;
+  --control-case: none;
+  --control-tracking: 0.01em;
+  --control-size: 15px;
+}
+
+[data-tone="factual"] {
+  --mark: var(--highlight);
+  --mark-foreground: var(--on-highlight);
+  --mark-tint: var(--highlight-tint);
+  --control-radius: 4px;
+  --surface-radius: 16px;
+  --kicker-radius: 2px;
+  --control-font: var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace;
+  --control-case: uppercase;
+  --control-tracking: 0.06em;
+  --control-size: 13px;
 }
 
 @keyframes rise {
@@ -293,6 +357,9 @@
 @keyframes fade {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -310,7 +377,7 @@
   body {
     margin: 0;
     font-family: var(--font-sans);
-    font-weight: 420;
+    font-weight: 450;
     background: var(--background);
     color: var(--foreground);
     -webkit-font-smoothing: antialiased;

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono, Newsreader } from "next/font/google";
+import { Cormorant_Garamond, Inter_Tight, JetBrains_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
 const interTight = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin"] });
+const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["400", "500"] });
 const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"] });
 const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "designsbyluca/ui",
-  description: "Free, square, calm components for shadcn/ui. MIT licensed.",
+  description: "A free website system for shadcn/ui: blocks and components in two tones, calm and factual. MIT licensed.",
 };
 
 // Sets the theme before the first paint, so a stored dark choice does not flash light.
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${interTight.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
+      className={`${interTight.variable} ${cormorant.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

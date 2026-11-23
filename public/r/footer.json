@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer",
+  "title": "Footer",
+  "description": "Link columns, copyright and legal links.",
+  "registryDependencies": [
+    "utils",
+    "https://ui.designsbyluca.com/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/designsbyluca/blocks/footer.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/*\n * Footer: link columns, then copyright and legal links in muted-foreground.\n * Separated from the page by a border line. Pair it with\n * <Wordmark size=\"footer\"> above for a larger close.\n */\n\ninterface FooterLink {\n  label: string;\n  href?: string;\n}\n\ninterface FooterProps extends React.ComponentProps<\"footer\"> {\n  brand?: React.ReactNode;\n  columns?: { title: string; links: FooterLink[] }[];\n  copyright?: React.ReactNode;\n  legal?: FooterLink[];\n}\n\nfunction Footer({ brand, columns = [], copyright, legal = [], className, children, ...props }: FooterProps) {\n  return (\n    <footer data-slot=\"footer\" className={cn(\"border-t border-border\", className)} {...props}>\n      <div className=\"mx-auto grid max-w-[1440px] gap-16 px-5 pt-12 pb-16 md:px-16\">\n        <div className=\"grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-8\">\n          {brand && <div className=\"text-[16px] leading-5 font-medium tracking-[-0.02em]\">{brand}</div>}\n          {columns.map((c) => (\n            <div key={c.title}>\n              <h2 className=\"m-0 mb-3 text-[14px] leading-5 font-medium text-muted-foreground\">{c.title}</h2>\n              <ul className=\"m-0 grid list-none gap-1 p-0\">\n                {c.links.map((l) => (\n                  <li key={l.label}>\n                    <a\n                      href={l.href ?? \"#\"}\n                      className=\"text-[14px] leading-6 text-foreground no-underline underline-offset-4 hover:underline\"\n                    >\n                      {l.label}\n                    </a>\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n        {children}\n        <div className=\"flex flex-wrap justify-between gap-4 text-[14px] leading-5 text-muted-foreground\">\n          {copyright && <span>{copyright}</span>}\n          {legal.length > 0 && (\n            <span className=\"flex flex-wrap gap-4\">\n              {legal.map((l) => (\n                <a key={l.label} href={l.href ?? \"#\"} className=\"text-muted-foreground no-underline underline-offset-4 hover:underline\">\n                  {l.label}\n                </a>\n              ))}\n            </span>\n          )}\n        </div>\n      </div>\n    </footer>\n  );\n}\n\nexport { Footer, type FooterProps, type FooterLink };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:block"
+}

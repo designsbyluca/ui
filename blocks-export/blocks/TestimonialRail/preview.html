@@ -1,0 +1,16 @@
+<!-- @dsCard group="Pro · Content" height=460 subtitle="A slow rail that pauses on hover" width=1200 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>TestimonialRail</title></head>
+<body>
+<div id="root"></div>
+<script>
+var S = window.DesignsByLuca, h = React.createElement;
+function ph(a) { var k = { 'surface-200': 0, 'stone': 1, 'warm': 2, 'tint': 1 }[a] || 0; var P = [['#cfc6b8', [['0','54%','100%','46%','#b8ad9c'],['58%','18%','30%','52%','#e9e3d8']]], ['#9a9b84', [['0','62%','100%','38%','#6f7158'],['14%','20%','26%','56%','#c9c4b0']]], ['#c7b2a2', [['0','0','100%','40%','#e2d5c8'],['44%','34%','40%','66%','#8d7566']]]][k]; return h('div', { className: 'sg-photo', style: { background: P[0] } }, P[1].map(function (r, i) { return h('i', { key: i, style: { left: r[0], top: r[1], width: r[2], height: r[3], background: r[4] } }); })); }
+function useLoop(ms) { var s = React.useState(0); React.useEffect(function () { var t0 = performance.now(), id = setInterval(function () { var x = ((performance.now() - t0) % ms) / ms; s[1](x < 0.5 ? x * 2 : 2 - x * 2); }, 60); return function () { clearInterval(id); }; }, []); return s[0]; }
+ReactDOM.createRoot(document.getElementById('root')).render(h('div', { style: { padding: '32px 0' } }, h(S.TestimonialRail, { items: [
+  { quote: '“The site was online two weeks later, and I did not have to deal with anything.”', name: 'Sample client', role: 'Practice, Berlin' },
+  { media: ph('surface-200') },
+  { quote: '“Finally a website that looks right on my clients’ laptops too.”', name: 'Sample client', role: 'Café, Leipzig' },
+  { media: ph('warm') } ] })));
+</script>
+</body></html>

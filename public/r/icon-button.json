@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "icon-button",
   "title": "IconButton",
-  "description": "A 48px square button with a single line icon.",
+  "description": "A 48px button with a single line icon.",
   "registryDependencies": [
     "utils",
     "https://ui.designsbyluca.com/r/theme.json",
@@ -10,8 +10,8 @@
   ],
   "files": [
     {
-      "path": "registry/ui/icon-button.tsx",
-      "content": "import * as React from \"react\";\n\nimport { Button, type ButtonProps } from \"./button\";\n\ninterface IconButtonProps extends Omit<ButtonProps, \"size\" | \"arrow\"> {\n  /** The icon element: an 18px line icon with a 1.25px square-capped stroke. */\n  icon?: React.ReactNode;\n  /** Required: the only name a screen reader gets. */\n  \"aria-label\": string;\n  /** icon = 48px, sm = 44px. */\n  size?: \"icon\" | \"sm\";\n}\n\n/** A 48px square button with a single line icon. In shadcn/ui this is `Button size=\"icon\"`. */\nfunction IconButton({ icon, children, size = \"icon\", variant = \"outline\", ...props }: IconButtonProps) {\n  return (\n    <Button data-slot=\"icon-button\" size={size === \"sm\" ? \"icon-sm\" : \"icon\"} variant={variant} {...props}>\n      {icon ?? children}\n    </Button>\n  );\n}\n\nexport { IconButton, type IconButtonProps };\n",
+      "path": "registry/designsbyluca/ui/icon-button.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button, type ButtonProps } from \"./button\";\n\ninterface IconButtonProps extends Omit<ButtonProps, \"size\" | \"arrow\"> {\n  /** The icon element: an 18px line icon with a 1.25px square-capped stroke. */\n  icon?: React.ReactNode;\n  /** Required: the only name a screen reader gets. */\n  \"aria-label\": string;\n  /** icon = 48px, sm = 44px. */\n  size?: \"icon\" | \"sm\";\n}\n\n/** A 48px button with a single line icon: round (calm) or radius-sm (factual). In shadcn/ui this is `Button size=\"icon\"`. */\nfunction IconButton({ icon, children, size = \"icon\", variant = \"outline\", ...props }: IconButtonProps) {\n  return (\n    <Button data-slot=\"icon-button\" size={size === \"sm\" ? \"icon-sm\" : \"icon\"} variant={variant} {...props}>\n      {icon ?? children}\n    </Button>\n  );\n}\n\nexport { IconButton, type IconButtonProps };\n",
       "type": "registry:ui"
     }
   ],

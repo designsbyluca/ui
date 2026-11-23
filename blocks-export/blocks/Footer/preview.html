@@ -1,0 +1,12 @@
+<!-- @dsCard group="Pro · Navigation" height=220 width=1200 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Footer</title></head>
+<body>
+<div id="root"></div>
+<script>
+var S = window.DesignsByLuca, h = React.createElement;
+ReactDOM.createRoot(document.getElementById('root')).render(h(S.Footer, {
+  columns: [{ title: 'Services', links: [{label:'Rent a website'},{label:'Buy a website'},{label:'Consulting'}] }, { title: 'Studio', links: [{label:'About'},{label:'Contact'}] }],
+  copyright: '© 2026 designsbyluca', legal: [{label:'Legal notice'},{label:'Privacy'}] }));
+</script>
+</body></html>

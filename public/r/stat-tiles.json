@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-tiles",
+  "title": "StatTiles",
+  "description": "Real numbers in muted square tiles.",
+  "registryDependencies": [
+    "utils",
+    "https://ui.designsbyluca.com/r/theme.json",
+    "https://ui.designsbyluca.com/r/photo.json"
+  ],
+  "files": [
+    {
+      "path": "registry/designsbyluca/blocks/stat-tiles.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Photo } from \"@/registry/designsbyluca/ui/photo\";\n\n/*\n * StatTiles: numbers in muted square tiles. The number in `stat` at the top\n * (mono in the factual tone), the label at the bottom, an optional small\n * image top right. Three to six tiles; `scatter` staggers them with gaps.\n * Only real, checkable numbers.\n */\n\ninterface StatTile {\n  value: React.ReactNode;\n  label: React.ReactNode;\n  /** Image URL, or true for a placeholder. */\n  image?: string | true;\n}\n\ninterface StatTilesProps extends React.ComponentProps<\"div\"> {\n  items: StatTile[];\n  scatter?: boolean;\n}\n\nfunction StatTiles({ items, scatter = false, className, ...props }: StatTilesProps) {\n  return (\n    <div\n      data-slot=\"stat-tiles\"\n      className={cn(\n        \"grid grid-cols-2 min-[900px]:grid-cols-4\",\n        scatter ? \"gap-4 md:gap-8\" : \"gap-px bg-border\",\n        className\n      )}\n      {...props}\n    >\n      {items.map((item, i) => (\n        <div\n          key={i}\n          className={cn(\n            \"relative flex aspect-square flex-col justify-between rounded-none bg-surface-100 p-6 md:p-8\",\n            scatter && i % 2 === 1 && \"min-[900px]:translate-y-16\",\n            scatter && i % 4 === 2 && \"min-[900px]:translate-y-8\"\n          )}\n        >\n          <span className=\"text-[32px] leading-8 font-[480] tracking-[-0.03em] md:text-[40px] md:leading-10 in-data-[tone=factual]:font-mono in-data-[tone=factual]:text-[28px] in-data-[tone=factual]:tracking-[-0.02em] md:in-data-[tone=factual]:text-[34px]\">\n            {item.value}\n          </span>\n          <span className=\"max-w-[12em] text-[14px] leading-5 text-muted-foreground md:text-[15px]\">{item.label}</span>\n          {item.image && (\n            <Photo\n              src={item.image === true ? undefined : item.image}\n              label={false}\n              className=\"absolute top-6 right-6 size-12 rounded-surface md:top-8 md:right-8 md:size-16\"\n            />\n          )}\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport { StatTiles, type StatTilesProps, type StatTile };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,13 +1,16 @@
 import * as React from "react";
 import tokens from "@/design-system/tokens.json";
 
-import { Photo } from "@/app/_components/photo";
 import { ThemeToggle } from "@/app/_components/theme-toggle";
 import { ToastDemo } from "@/app/_components/toast-demo";
-import { Alert, AlertDescription, AlertTitle } from "@/registry/ui/alert";
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/ui/avatar";
-import { Badge } from "@/registry/ui/badge";
-import { Button } from "@/registry/ui/button";
+import { ToneToggle } from "@/app/_components/tone-toggle";
+import { Photo } from "@/registry/designsbyluca/ui/photo";
+import { Kicker } from "@/registry/designsbyluca/ui/kicker";
+import { CalmPage, FactualPage } from "@/app/_components/tone-pages";
+import { Alert, AlertDescription, AlertTitle } from "@/registry/designsbyluca/ui/alert";
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/designsbyluca/ui/avatar";
+import { Badge } from "@/registry/designsbyluca/ui/badge";
+import { Button } from "@/registry/designsbyluca/ui/button";
 import {
   Card,
   CardAction,
@@ -18,8 +21,8 @@ import {
   CardMedia,
   CardMeta,
   CardTitle,
-} from "@/registry/ui/card";
-import { Checkbox } from "@/registry/ui/checkbox";
+} from "@/registry/designsbyluca/ui/card";
+import { Checkbox } from "@/registry/designsbyluca/ui/checkbox";
 import {
   Dialog,
   DialogClose,
@@ -29,17 +32,17 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/ui/dialog";
-import { IconButton } from "@/registry/ui/icon-button";
-import { Input } from "@/registry/ui/input";
-import { Field, FieldError, FieldHint, Label, OptionRow } from "@/registry/ui/label";
-import { Link } from "@/registry/ui/link";
-import { RadioGroup, RadioGroupItem } from "@/registry/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/ui/select";
-import { Separator } from "@/registry/ui/separator";
-import { Switch } from "@/registry/ui/switch";
-import { Textarea } from "@/registry/ui/textarea";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/ui/tooltip";
+} from "@/registry/designsbyluca/ui/dialog";
+import { IconButton } from "@/registry/designsbyluca/ui/icon-button";
+import { Input } from "@/registry/designsbyluca/ui/input";
+import { Field, FieldError, FieldHint, Label, OptionRow } from "@/registry/designsbyluca/ui/label";
+import { Link } from "@/registry/designsbyluca/ui/link";
+import { RadioGroup, RadioGroupItem } from "@/registry/designsbyluca/ui/radio-group";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/designsbyluca/ui/select";
+import { Separator } from "@/registry/designsbyluca/ui/separator";
+import { Switch } from "@/registry/designsbyluca/ui/switch";
+import { Textarea } from "@/registry/designsbyluca/ui/textarea";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/registry/designsbyluca/ui/tooltip";
 
 /* ---------- preview helpers (the export's sg-states / sg-state-label) ---------- */
 
@@ -124,7 +127,7 @@ const INFO = icon("M9 8v5M9 5.5v.5M9 16A7 7 0 1 0 9 2a7 7 0 0 0 0 14Z");
 const variants = ["default", "outline", "secondary", "ghost", "destructive", "link"] as const;
 const hoverClass: Record<(typeof variants)[number], string> = {
   default: "bg-primary-hover",
-  outline: "border-foreground dark:bg-surface-100",
+  outline: "border-foreground",
   secondary: "bg-surface-200",
   ghost: "bg-accent text-accent-foreground",
   destructive: "opacity-90",
@@ -132,6 +135,8 @@ const hoverClass: Record<(typeof variants)[number], string> = {
 };
 const labelFor = (v: (typeof variants)[number]) => (v === "destructive" ? "Delete project" : "Request a quote");
 const focusClass = "outline-2 outline-offset-3 outline-ring";
+// Boxed fields show focus as a 2px ink frame (1px border plus 1px inset of the same colour).
+const boxedFocus = "border-foreground shadow-[0_0_0_1px_var(--foreground)]";
 
 const nav = [
   ["tokens", "Tokens"],
@@ -148,6 +153,8 @@ const nav = [
   ["badge", "Badge"],
   ["avatar", "Avatar"],
   ["card", "Card"],
+  ["kicker", "Kicker"],
+  ["photo", "Photo"],
   ["separator", "Separator"],
   ["alert", "Alert"],
   ["toast", "Toast"],
@@ -165,21 +172,31 @@ const services = [
 export default function Page() {
   return (
     <TooltipProvider>
-      <div className="mx-auto max-w-[1296px] px-8 md:px-12">
-        <header className="flex flex-wrap items-center justify-between gap-4 py-8">
-          <span className="inline-flex items-center gap-3.5 font-serif text-[15px] leading-5 tracking-[0.14em] uppercase before:size-[7px] before:bg-mark before:content-['']">
-            designsbyluca/ui
-          </span>
+      <header className="border-b border-border bg-background">
+        <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-x-8 gap-y-3 px-5 py-4 md:px-16">
+          <span className="text-[16px] leading-5 font-medium tracking-[-0.02em]">designsbyluca/ui</span>
+          <nav aria-label="Preview" className="flex flex-wrap gap-x-6 gap-y-2 text-sm leading-5">
+            <Link href="#calm" variant="muted">Calm page</Link>
+            <Link href="#factual" variant="muted">Factual page</Link>
+            <Link href="#components" variant="muted">Components</Link>
+          </nav>
           <ThemeToggle />
-        </header>
+        </div>
+      </header>
 
-        <div className="grid gap-8 pt-16 pb-36">
-          <h1 className="m-0 max-w-[12em] text-[56px] leading-[56px] font-[470] tracking-[-0.04em] md:text-[120px] md:leading-[114px]">
-            Quiet by default. <span className="text-ink-display-muted">Square by design.</span>
-          </h1>
-          <p className="m-0 max-w-[30em] text-[22px] leading-8 font-[420] tracking-[-0.01em] text-muted-foreground">
-            Eighteen free components for shadcn/ui, with the tokens they stand on. Every state, light and dark.
+      <CalmPage />
+      <FactualPage />
+
+      <div id="components" className="scroll-mt-16 border-t border-border">
+        <div className="mx-auto max-w-[1296px] px-8 md:px-12">
+        <div className="grid gap-8 pt-24 pb-24">
+          <h2 className="m-0 max-w-[12em] text-[48px] leading-[48px] font-[480] tracking-[-0.04em] md:text-[96px] md:leading-[92px]">
+            Components. <span className="text-ink-display-muted">Under every block.</span>
+          </h2>
+          <p className="m-0 max-w-[30em] text-[22px] leading-8 font-[450] tracking-[-0.01em] text-muted-foreground">
+            Twenty components with the shadcn/ui names, in every state, light and dark. Switch the tone to see both.
           </p>
+          <ToneToggle target="components" />
           <nav aria-label="Components" className="flex max-w-[56em] flex-wrap gap-x-6 gap-y-3 text-sm leading-5">
             {nav.map(([id, label]) => (
               <Link key={id} href={`#${id}`} variant="muted">
@@ -190,7 +207,7 @@ export default function Page() {
         </div>
 
         {/* ---------------- Tokens ---------------- */}
-        <Section id="tokens" title="Tokens." muted="Warm off-white, stone, near-black and one ochre.">
+        <Section id="tokens" title="Tokens." muted="Stone, sand, near-black, one orange, and lime for the factual tone.">
           <div>
             <Sub>Base palette</Sub>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] gap-x-4 gap-y-6">
@@ -215,17 +232,17 @@ export default function Page() {
                 .map((s) => (
                   <div key={s.name} className="grid gap-2 border-b border-border pb-8">
                     <span className="font-mono text-[12px] leading-4 text-muted-foreground">
-                      {s.name} · {s.fontSize} / {s.lineHeight}
+                      {s.name}, {s.fontSize} / {s.lineHeight}
                     </span>
                     <span
-                      className={s.family === "serif" ? "font-serif" : "font-sans"}
+                      className={{ serif: "font-serif", "serif-text": "font-serif-text", mono: "font-mono" }[s.family ?? ""] ?? "font-sans"}
                       style={{
                         // Large styles shrink on phones (tokens: "Mobile 56px"); ratios stay as specified.
                         fontSize: `min(${s.fontSize}, 15vw)`,
                         lineHeight: parseFloat(s.lineHeight) / parseFloat(s.fontSize),
                         fontWeight: s.fontWeight,
                         letterSpacing: `${parseFloat(s.letterSpacing) / parseFloat(s.fontSize)}em`,
-                        textTransform: s.family === "serif" && s.name !== "letter" ? "uppercase" : undefined,
+                        textTransform: s.family === "serif" || s.family === "mono" ? "uppercase" : undefined,
                       }}
                     >
                       {s.sample}
@@ -237,7 +254,7 @@ export default function Page() {
         </Section>
 
         {/* ---------------- Button ---------------- */}
-        <Section id="button" title="Button." muted="A verb as its label, 48px, square.">
+        <Section id="button" title="Button." muted="A pill, or mono capitals in the factual tone.">
           {variants.map((v) => (
             <div key={v}>
               <Sub>{v}</Sub>
@@ -266,7 +283,7 @@ export default function Page() {
           <div>
             <Sub>Sizes, arrow, link</Sub>
             <States min={180}>
-              <State label="Small, 44">
+              <State label="Small, 40">
                 <Button size="sm">View work</Button>
               </State>
               <State label="Default, 48">
@@ -287,8 +304,8 @@ export default function Page() {
           </div>
           <div>
             <Sub>On media</Sub>
-            <div className="relative h-80 overflow-hidden bg-surface-inverse md:h-[440px]">
-              <Photo tone="dark" className="absolute inset-0" />
+            <div className="relative h-80 overflow-hidden rounded-surface bg-surface-inverse md:h-[440px]">
+              <Photo tone="dark" label={false} className="absolute inset-0" />
               <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-center gap-4 p-8 md:p-12">
                 <Button onMedia arrow>
                   Request a quote
@@ -319,7 +336,7 @@ export default function Page() {
                 <State label="Disabled">
                   <IconButton variant={v} aria-label="Add to request" icon={PLUS} disabled />
                 </State>
-                <State label="Small, 44">
+                <State label="Small, 40">
                   <IconButton variant={v} size="sm" aria-label="Share" icon={SHARE} />
                 </State>
               </States>
@@ -402,7 +419,7 @@ export default function Page() {
                         id={`${p}-3`}
                         variant={variant}
                         defaultValue="Alex Berger"
-                        className={boxed ? `border-foreground ${focusClass}` : "border-b-2 border-b-ring"}
+                        className={boxed ? boxedFocus : "border-b-2 border-b-ring"}
                       />
                     </Field>
                   </State>
@@ -453,7 +470,7 @@ export default function Page() {
                 <Textarea
                   id="ta-3"
                   defaultValue="A new website for a physiotherapy practice in Potsdam."
-                  className={`border-foreground ${focusClass}`}
+                  className={boxedFocus}
                 />
               </Field>
             </State>
@@ -515,7 +532,7 @@ export default function Page() {
                         <SelectTrigger
                           id={`${p}-3`}
                           variant={variant}
-                          className={variant === "boxed" ? `border-foreground ${focusClass}` : "border-b-2 border-b-ring"}
+                          className={variant === "boxed" ? boxedFocus : "border-b-2 border-b-ring"}
                         >
                           <SelectValue />
                         </SelectTrigger>
@@ -553,7 +570,7 @@ export default function Page() {
         </Section>
 
         {/* ---------------- Checkbox ---------------- */}
-        <Section id="checkbox" title="Checkbox." muted="A 20px square for yes or no.">
+        <Section id="checkbox" title="Checkbox." muted="A 20px box for yes or no.">
           <States min={200}>
             <State label="Unchecked">
               <OptionRow>
@@ -775,7 +792,7 @@ export default function Page() {
         </Section>
 
         {/* ---------------- Badge ---------------- */}
-        <Section id="badge" title="Badge." muted="Capitals, a fine line, sometimes the square.">
+        <Section id="badge" title="Badge." muted="Capitals, a fine line, sometimes a dot.">
           <States min={160}>
             <State label="Default">
               <Badge>New</Badge>
@@ -791,6 +808,9 @@ export default function Page() {
             </State>
             <State label="Inverse">
               <Badge variant="inverse">Pro</Badge>
+            </State>
+            <State label="Accent">
+              <Badge variant="accent">Open</Badge>
             </State>
             <State label="As link, focus">
               <Badge asChild variant="outline" className={focusClass}>
@@ -841,7 +861,7 @@ export default function Page() {
         </Section>
 
         {/* ---------------- Card ---------------- */}
-        <Section id="card" title="Card." muted="A quiet surface, or image above and text below.">
+        <Section id="card" title="Card." muted="A quiet surface, a tile on sand, or image above.">
           <States min={340}>
             <State label="Default">
               <Card>
@@ -879,7 +899,7 @@ export default function Page() {
                 </CardMedia>
                 <CardHeader>
                   <CardMeta>
-                    <span>Case 04 · Website</span>
+                    <span>Case 04, Website</span>
                     <span>2026</span>
                   </CardMeta>
                   <CardTitle>A practice that feels like the room</CardTitle>
@@ -891,6 +911,46 @@ export default function Page() {
                   </Button>
                 </CardFooter>
               </Card>
+            </State>
+            <State label="Tile, on sand">
+              <Card variant="tile">
+                <CardHeader>
+                  <CardTitle>Planning</CardTitle>
+                  <CardDescription>Floor plans, light and materials, settled before anything is ordered.</CardDescription>
+                </CardHeader>
+              </Card>
+            </State>
+            <State label="Accent tile">
+              <Card variant="mark">
+                <CardHeader>
+                  <CardTitle>First visit free</CardTitle>
+                  <CardDescription>An hour on site, and you know what it would cost.</CardDescription>
+                </CardHeader>
+              </Card>
+            </State>
+          </States>
+        </Section>
+
+        {/* ---------------- Kicker ---------------- */}
+        <Section id="kicker" title="Kicker." muted="One or two words above a title.">
+          <States min={200}>
+            <State label="Default">
+              <Kicker>Rent</Kicker>
+            </State>
+            <State label="Longer">
+              <Kicker>New in 2026</Kicker>
+            </State>
+          </States>
+        </Section>
+
+        {/* ---------------- Photo ---------------- */}
+        <Section id="photo" title="Photo." muted="A placeholder until the real one is there.">
+          <States min={300}>
+            <State label="Light">
+              <Photo className="aspect-[4/3] rounded-surface" />
+            </State>
+            <State label="Dark, for white text">
+              <Photo tone="dark" className="aspect-[4/3] rounded-surface" />
             </State>
           </States>
         </Section>
@@ -925,7 +985,7 @@ export default function Page() {
         </Section>
 
         {/* ---------------- Alert ---------------- */}
-        <Section id="alert" title="Alert." muted="The square, a title, one or two sentences.">
+        <Section id="alert" title="Alert." muted="A dot, a title, one or two sentences.">
           <States min={340}>
             <State label="Default">
               <Alert>
@@ -988,7 +1048,7 @@ export default function Page() {
         </Section>
 
         {/* ---------------- Dialog ---------------- */}
-        <Section id="dialog" title="Dialog." muted="A short task, in a square window.">
+        <Section id="dialog" title="Dialog." muted="A short task, in a window of its own.">
           <div className="flex flex-wrap gap-4">
             <Dialog>
               <DialogTrigger asChild>
@@ -996,9 +1056,7 @@ export default function Page() {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <span className="inline-flex items-center gap-3.5 font-serif text-[15px] leading-5 tracking-[0.14em] uppercase before:size-[7px] before:bg-mark before:content-['']">
-                    Request
-                  </span>
+                  <Kicker>Request</Kicker>
                   <DialogTitle>Tell me about your project</DialogTitle>
                   <DialogDescription>I answer within two working days.</DialogDescription>
                 </DialogHeader>
@@ -1041,9 +1099,7 @@ export default function Page() {
             <Dialog open modal={false}>
               <DialogContent inline aria-describedby="dlg-inline-desc">
                 <DialogHeader>
-                  <span className="inline-flex items-center gap-3.5 font-serif text-[15px] leading-5 tracking-[0.14em] uppercase before:size-[7px] before:bg-mark before:content-['']">
-                    Request
-                  </span>
+                  <Kicker>Request</Kicker>
                   <DialogTitle>Tell me about your project</DialogTitle>
                   <DialogDescription id="dlg-inline-desc">I answer within two working days.</DialogDescription>
                 </DialogHeader>
@@ -1057,11 +1113,12 @@ export default function Page() {
         </Section>
 
         <footer className="flex flex-wrap items-center justify-between gap-4 border-t border-border py-10 text-sm leading-5 text-muted-foreground">
-          <span>designsbyluca/ui · MIT licence</span>
+          <span>designsbyluca/ui, MIT licence</span>
           <Link href="https://ui.shadcn.com" variant="muted" external>
             Built for shadcn/ui
           </Link>
         </footer>
+        </div>
       </div>
     </TooltipProvider>
   );

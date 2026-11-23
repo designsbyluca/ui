@@ -1,0 +1,13 @@
+<!-- @dsCard group="Pro · Navigation" height=260 width=1200 -->
+<!doctype html>
+<html><head><meta charset="utf-8"><title>NavBar</title></head>
+<body>
+<div id="root"></div>
+<script>
+var S = window.DesignsByLuca, h = React.createElement;
+ReactDOM.createRoot(document.getElementById('root')).render(h('div', null,
+  h(S.NavBar, { brand: 'designsbyluca', links: [{label:'Websites'},{label:'Consulting'},{label:'About'}], secondary: {label:'Prices'}, cta: {label:'Request a quote'} }),
+  h('div', { className: 'sg-stage' }, h(S.NavBar, { overMedia: true, brand: 'designsbyluca', links: [{label:'Websites'},{label:'Consulting'},{label:'About'}], secondary: {label:'Prices'}, cta: {label:'Request a quote'} })),
+  h('div', { style: { background: 'var(--muted)', padding: '8px 0 20px' } }, h(S.NavBar, { floating: true, brand: 'designsbyluca', lang: { label: 'EN' }, links: [{label:'Websites', menu: true},{label:'Consulting', menu: true},{label:'About', menu: true}], secondary: {label:'Prices'}, cta: {label:'Request a quote'} }))));
+</script>
+</body></html>
