@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "A text field with lots of room and a single line below.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "http://localhost:3000/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/input.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst inputVariants = cva(\n  [\n    \"box-border w-full min-w-0 rounded-none font-sans text-[19px] leading-[26px] tracking-[-0.01em] text-foreground\",\n    \"placeholder:text-stone\",\n    \"transition-[border-color,background-color] duration-(--dur-fast) ease-standard\",\n    \"disabled:cursor-not-allowed disabled:text-muted-foreground\",\n    \"file:border-0 file:bg-transparent file:font-sans file:text-foreground\",\n  ],\n  {\n    variants: {\n      variant: {\n        // One line below, no box. Focus: a 2px ochre line. Disabled: dashed. Error: red.\n        line: [\n          \"h-14 border-0 border-b border-b-input bg-transparent p-0\",\n          \"hover:border-b-foreground\",\n          \"focus:border-b-2 focus:border-b-ring focus:outline-none\",\n          \"disabled:border-b disabled:border-dashed disabled:border-b-input\",\n          \"aria-invalid:border-b-destructive aria-invalid:focus:border-b-2 aria-invalid:focus:border-b-destructive\",\n        ],\n        // Extension: a very fine frame for dense forms.\n        boxed: [\n          \"h-14 border border-border bg-background px-5 py-0 text-[17px] leading-[26px]\",\n          \"hover:border-input\",\n          \"focus:border-foreground focus:outline-2 focus:outline-offset-3 focus:outline-ring\",\n          \"disabled:border-border disabled:bg-muted\",\n          \"aria-invalid:border-destructive aria-invalid:focus:border-b-2\",\n        ],\n      },\n    },\n    defaultVariants: { variant: \"line\" },\n  }\n);\n\ninterface InputProps extends React.ComponentProps<\"input\">, VariantProps<typeof inputVariants> {}\n\nfunction Input({ className, type = \"text\", variant = \"line\", ...props }: InputProps) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      data-variant={variant}\n      className={cn(inputVariants({ variant }), className)}\n      {...props}\n    />\n  );\n}\n\nexport { Input, inputVariants, type InputProps };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "A small square label in capitals. Also exported as Tag.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "http://localhost:3000/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/badge.tsx",
+      "content": "import * as React from \"react\";\nimport { Slot } from \"radix-ui\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  [\n    \"inline-flex h-7 shrink-0 items-center gap-2.5 rounded-none border px-3 whitespace-nowrap\",\n    \"text-[11.5px] leading-[14px] font-medium tracking-[0.08em] uppercase\",\n    \"before:size-1.5 before:flex-none before:content-['']\",\n    \"focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring\",\n  ],\n  {\n    variants: {\n      variant: {\n        // A fine line and the ochre square: for the one that matters.\n        default: \"border-input bg-transparent text-foreground before:bg-mark\",\n        secondary: \"border-transparent bg-secondary text-secondary-foreground before:hidden\",\n        outline: \"border-input bg-transparent text-foreground before:hidden\",\n        destructive: \"border-destructive bg-transparent text-destructive-text before:bg-destructive\",\n        // Extension: near-black fill.\n        inverse: \"border-primary bg-primary text-primary-foreground before:hidden\",\n      },\n    },\n    defaultVariants: { variant: \"default\" },\n  }\n);\n\ninterface BadgeProps extends React.ComponentProps<\"span\">, VariantProps<typeof badgeVariants> {\n  /** Wrap your own element, e.g. a link. */\n  asChild?: boolean;\n}\n\n/** A small square label in capitals, 28px high. Not interactive. */\nfunction Badge({ className, variant, asChild = false, ...props }: BadgeProps) {\n  const Comp = asChild ? Slot.Root : \"span\";\n  return <Comp data-slot=\"badge\" className={cn(badgeVariants({ variant }), className)} {...props} />;\n}\n\n/** The same component under its older name. */\nconst Tag = Badge;\n\nexport { Badge, Tag, badgeVariants, type BadgeProps };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,981 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "designsbyluca",
+  "homepage": "http://localhost:3000",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "designsbyluca theme",
+      "description": "Tokens of the designsbyluca design system: colours light and dark, type scale, motion, square corners.",
+      "cssVars": {
+        "theme": {
+          "color-surface-000": "var(--surface-000)",
+          "color-surface-100": "var(--surface-100)",
+          "color-surface-200": "var(--surface-200)",
+          "color-surface-inverse": "var(--surface-inverse)",
+          "color-glass": "var(--glass)",
+          "color-ink": "var(--ink)",
+          "color-ink-hover": "var(--ink-hover)",
+          "color-ink-muted": "var(--ink-muted)",
+          "color-ink-display-muted": "var(--ink-display-muted)",
+          "color-ink-unread": "var(--ink-unread)",
+          "color-ink-inverse": "var(--ink-inverse)",
+          "color-stone": "var(--stone)",
+          "color-ochre": "var(--ochre)",
+          "color-ochre-tint": "var(--ochre-tint)",
+          "color-red": "var(--red)",
+          "color-red-tint": "var(--red-tint)",
+          "color-on-media": "var(--on-media)",
+          "color-on-media-ink": "var(--on-media-ink)",
+          "color-hairline": "var(--hairline)",
+          "color-hairline-strong": "var(--hairline-strong)",
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-primary-hover": "var(--primary-hover)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-destructive-text": "var(--destructive-text)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-mark": "var(--mark)",
+          "color-mark-tint": "var(--mark-tint)",
+          "radius-xs": "var(--radius)",
+          "radius-sm": "var(--radius)",
+          "radius-md": "var(--radius)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "var(--radius)",
+          "radius-2xl": "var(--radius)",
+          "radius-pill": "999px",
+          "font-sans": "var(--font-inter-tight), \"Helvetica Neue\", Arial, sans-serif",
+          "font-serif": "var(--font-newsreader), \"Times New Roman\", serif",
+          "font-mono": "var(--font-jetbrains-mono), ui-monospace, monospace",
+          "ease-entrance": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+          "ease-loop": "cubic-bezier(0.42, 0, 0.58, 1)",
+          "shadow-float": "0px 24px 48px -24px rgba(27, 25, 22, 0.22)",
+          "shadow-dialog": "0px 40px 80px -32px rgba(15, 14, 13, 0.35)",
+          "shadow-window": "0px 24px 64px -24px rgba(27, 25, 22, 0.28)",
+          "animate-rise": "rise var(--dur-reveal) cubic-bezier(0.22, 1, 0.36, 1) both",
+          "animate-rise-base": "rise var(--dur-base) cubic-bezier(0.22, 1, 0.36, 1) both",
+          "animate-fade": "fade var(--dur-base) ease-out both",
+          "animate-fade-fast": "fade var(--dur-fast) cubic-bezier(0.25, 0.1, 0.25, 1) both",
+          "text-display-wordmark": "288px",
+          "text-display-wordmark--line-height": "240px",
+          "text-display-wordmark--letter-spacing": "-11.52px",
+          "text-display-wordmark--font-weight": "470",
+          "text-display-xl": "120px",
+          "text-display-xl--line-height": "114px",
+          "text-display-xl--letter-spacing": "-4.8px",
+          "text-display-xl--font-weight": "470",
+          "text-headline-xl": "72px",
+          "text-headline-xl--line-height": "72px",
+          "text-headline-xl--letter-spacing": "-2.88px",
+          "text-headline-xl--font-weight": "470",
+          "text-headline": "48px",
+          "text-headline--line-height": "50px",
+          "text-headline--letter-spacing": "-1.68px",
+          "text-headline--font-weight": "470",
+          "text-feature-title": "40px",
+          "text-feature-title--line-height": "42px",
+          "text-feature-title--letter-spacing": "-1.2px",
+          "text-feature-title--font-weight": "470",
+          "text-display-serif": "64px",
+          "text-display-serif--line-height": "64px",
+          "text-display-serif--letter-spacing": "2.56px",
+          "text-display-serif--font-weight": "400",
+          "text-numeral": "120px",
+          "text-numeral--line-height": "96px",
+          "text-numeral--letter-spacing": "-4.8px",
+          "text-numeral--font-weight": "470",
+          "text-section-title": "48px",
+          "text-section-title--line-height": "50px",
+          "text-section-title--letter-spacing": "-1.68px",
+          "text-section-title--font-weight": "470",
+          "text-lead": "22px",
+          "text-lead--line-height": "32px",
+          "text-lead--letter-spacing": "-0.22px",
+          "text-lead--font-weight": "420",
+          "text-card-title": "28px",
+          "text-card-title--line-height": "32px",
+          "text-card-title--letter-spacing": "-0.7px",
+          "text-card-title--font-weight": "470",
+          "text-stat": "40px",
+          "text-stat--line-height": "40px",
+          "text-stat--letter-spacing": "-1.2px",
+          "text-stat--font-weight": "470",
+          "text-letter": "24px",
+          "text-letter--line-height": "32px",
+          "text-letter--letter-spacing": "0px",
+          "text-letter--font-weight": "400",
+          "text-quote": "20px",
+          "text-quote--line-height": "29px",
+          "text-quote--letter-spacing": "-0.2px",
+          "text-quote--font-weight": "420",
+          "text-input-text": "19px",
+          "text-input-text--line-height": "26px",
+          "text-input-text--letter-spacing": "-0.19px",
+          "text-input-text--font-weight": "400",
+          "text-body": "16px",
+          "text-body--line-height": "25px",
+          "text-body--letter-spacing": "-0.08px",
+          "text-body--font-weight": "420",
+          "text-label": "15px",
+          "text-label--line-height": "20px",
+          "text-label--letter-spacing": "-0.08px",
+          "text-label--font-weight": "500",
+          "text-small": "14px",
+          "text-small--line-height": "20px",
+          "text-small--letter-spacing": "0px",
+          "text-small--font-weight": "420",
+          "text-field-label": "13px",
+          "text-field-label--line-height": "18px",
+          "text-field-label--letter-spacing": "0px",
+          "text-field-label--font-weight": "420",
+          "text-badge": "11.5px",
+          "text-badge--line-height": "14px",
+          "text-badge--letter-spacing": "0.92px",
+          "text-badge--font-weight": "500",
+          "text-eyebrow": "15px",
+          "text-eyebrow--line-height": "20px",
+          "text-eyebrow--letter-spacing": "2.1px",
+          "text-eyebrow--font-weight": "400",
+          "text-caption": "12px",
+          "text-caption--line-height": "16px",
+          "text-caption--letter-spacing": "1.68px",
+          "text-caption--font-weight": "400"
+        },
+        "light": {
+          "surface-000": "#fbfaf8",
+          "surface-100": "#f2f0ec",
+          "surface-200": "#e8e5df",
+          "surface-inverse": "#0f0e0d",
+          "glass": "rgba(251, 250, 248, 0.78)",
+          "ink": "#1b1916",
+          "ink-hover": "#3a3530",
+          "ink-muted": "#6a645e",
+          "ink-display-muted": "#8f8982",
+          "ink-unread": "#d5d1cb",
+          "ink-inverse": "#fbfaf8",
+          "stone": "#a39d96",
+          "ochre": "#8a6420",
+          "ochre-tint": "#f1e7d3",
+          "red": "#8f2a24",
+          "red-tint": "#f3e1de",
+          "on-media": "#fbfaf8",
+          "on-media-ink": "#1b1916",
+          "hairline": "rgba(27, 25, 22, 0.14)",
+          "hairline-strong": "rgba(27, 25, 22, 0.32)",
+          "background": "#fbfaf8",
+          "foreground": "#1b1916",
+          "card": "#f2f0ec",
+          "card-foreground": "#1b1916",
+          "popover": "#fbfaf8",
+          "popover-foreground": "#1b1916",
+          "primary": "#1b1916",
+          "primary-foreground": "#fbfaf8",
+          "primary-hover": "#3a3530",
+          "secondary": "#f2f0ec",
+          "secondary-foreground": "#1b1916",
+          "muted": "#f2f0ec",
+          "muted-foreground": "#6a645e",
+          "accent": "#f2f0ec",
+          "accent-foreground": "#1b1916",
+          "destructive": "#8f2a24",
+          "destructive-foreground": "#fbfaf8",
+          "destructive-text": "#8f2a24",
+          "border": "rgba(27, 25, 22, 0.14)",
+          "input": "rgba(27, 25, 22, 0.32)",
+          "ring": "#8a6420",
+          "mark": "#8a6420",
+          "mark-tint": "#f1e7d3",
+          "space-1": "4px",
+          "space-2": "8px",
+          "space-3": "16px",
+          "space-4": "32px",
+          "space-5": "64px",
+          "space-6": "144px",
+          "radius": "0px",
+          "radius-none": "0px",
+          "radius-pill": "999px",
+          "dur-fast": "150ms",
+          "dur-base": "300ms",
+          "dur-reveal": "700ms",
+          "dur-entrance": "900ms",
+          "dur-loop": "1750ms",
+          "delay-1": "200ms",
+          "delay-2": "300ms",
+          "delay-3": "450ms",
+          "dur-overlay": "400ms",
+          "dur-ring": "10000ms",
+          "dur-scrub": "120ms",
+          "dur-marquee": "80000ms",
+          "ease-entrance": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+          "ease-loop": "cubic-bezier(0.42, 0, 0.58, 1)",
+          "rise-sm": "16px",
+          "rise-md": "32px",
+          "bob": "10px",
+          "zoom-media": "1.03",
+          "blur-near": "4px",
+          "blur-far": "12px",
+          "tilt": "4deg",
+          "fan-overlap": "56px",
+          "shadow-float": "0px 24px 48px -24px rgba(27, 25, 22, 0.22)",
+          "shadow-dialog": "0px 40px 80px -32px rgba(15, 14, 13, 0.35)",
+          "shadow-window": "0px 24px 64px -24px rgba(27, 25, 22, 0.28)"
+        },
+        "dark": {
+          "surface-000": "#0f0e0d",
+          "surface-100": "#1b1916",
+          "surface-200": "#2a2622",
+          "surface-inverse": "#0f0e0d",
+          "glass": "rgba(15, 14, 13, 0.78)",
+          "ink": "#f2f0ec",
+          "ink-hover": "#d9d5ce",
+          "ink-muted": "#a6a09a",
+          "ink-display-muted": "#7d7771",
+          "ink-unread": "#45403b",
+          "ink-inverse": "#fbfaf8",
+          "stone": "#58524c",
+          "ochre": "#d1a65c",
+          "ochre-tint": "#2e2414",
+          "red": "#b0402f",
+          "red-tint": "#2a1513",
+          "on-media": "#fbfaf8",
+          "on-media-ink": "#1b1916",
+          "hairline": "rgba(242, 240, 236, 0.14)",
+          "hairline-strong": "rgba(242, 240, 236, 0.32)",
+          "background": "#0f0e0d",
+          "foreground": "#f2f0ec",
+          "card": "#1b1916",
+          "card-foreground": "#f2f0ec",
+          "popover": "#1b1916",
+          "popover-foreground": "#f2f0ec",
+          "primary": "#f2f0ec",
+          "primary-foreground": "#0f0e0d",
+          "primary-hover": "#d9d5ce",
+          "secondary": "#2a2622",
+          "secondary-foreground": "#f2f0ec",
+          "muted": "#1b1916",
+          "muted-foreground": "#a6a09a",
+          "accent": "#2a2622",
+          "accent-foreground": "#f2f0ec",
+          "destructive": "#b0402f",
+          "destructive-foreground": "#fbfaf8",
+          "destructive-text": "#f2f0ec",
+          "border": "rgba(242, 240, 236, 0.14)",
+          "input": "rgba(242, 240, 236, 0.32)",
+          "ring": "#d1a65c",
+          "mark": "#d1a65c",
+          "mark-tint": "#2e2414"
+        }
+      },
+      "css": {
+        "@keyframes rise": {
+          "from": {
+            "opacity": "0",
+            "transform": "translateY(var(--rise-sm))"
+          },
+          "to": {
+            "opacity": "1",
+            "transform": "none"
+          }
+        },
+        "@keyframes fade": {
+          "from": {
+            "opacity": "0"
+          },
+          "to": {
+            "opacity": "1"
+          }
+        },
+        "@layer base": {
+          "body": {
+            "font-weight": "420"
+          }
+        }
+      }
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A 48px square button with a verb as its label.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "title": "IconButton",
+      "description": "A 48px square button with a single line icon.",
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/icon-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "A text link with a 1px line below that thickens to 2px on hover.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A text field with lots of room and a single line below.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line field in a very fine frame.",
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "A single choice from a short list; the trigger looks like an Input.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/input.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A 20px square for yes/no choices.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "RadioGroup",
+      "description": "One choice from a few visible options: a circle with a dot.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "An on/off toggle: a 44 × 24px rectangle with a square thumb.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "The name of a form control, with Field, OptionRow, FieldHint and FieldError.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A small square label in capitals. Also exported as Tag.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A picture of a person, with initials as fallback.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A quiet surface, or editorial with the image above.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A 1px hairline between groups.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A message in the page flow: the square, a title and one or two sentences.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "A short note in a corner that leaves by itself. Sonner-style toast() API.",
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json",
+        "http://localhost:3000/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A short hint on hover or keyboard focus.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal window for a short task.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "all",
+      "type": "registry:theme",
+      "title": "All components",
+      "description": "The theme and all 18 free components at once.",
+      "cssVars": {
+        "theme": {
+          "color-surface-000": "var(--surface-000)",
+          "color-surface-100": "var(--surface-100)",
+          "color-surface-200": "var(--surface-200)",
+          "color-surface-inverse": "var(--surface-inverse)",
+          "color-glass": "var(--glass)",
+          "color-ink": "var(--ink)",
+          "color-ink-hover": "var(--ink-hover)",
+          "color-ink-muted": "var(--ink-muted)",
+          "color-ink-display-muted": "var(--ink-display-muted)",
+          "color-ink-unread": "var(--ink-unread)",
+          "color-ink-inverse": "var(--ink-inverse)",
+          "color-stone": "var(--stone)",
+          "color-ochre": "var(--ochre)",
+          "color-ochre-tint": "var(--ochre-tint)",
+          "color-red": "var(--red)",
+          "color-red-tint": "var(--red-tint)",
+          "color-on-media": "var(--on-media)",
+          "color-on-media-ink": "var(--on-media-ink)",
+          "color-hairline": "var(--hairline)",
+          "color-hairline-strong": "var(--hairline-strong)",
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-primary-hover": "var(--primary-hover)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-destructive-text": "var(--destructive-text)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-mark": "var(--mark)",
+          "color-mark-tint": "var(--mark-tint)",
+          "radius-xs": "var(--radius)",
+          "radius-sm": "var(--radius)",
+          "radius-md": "var(--radius)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "var(--radius)",
+          "radius-2xl": "var(--radius)",
+          "radius-pill": "999px",
+          "font-sans": "var(--font-inter-tight), \"Helvetica Neue\", Arial, sans-serif",
+          "font-serif": "var(--font-newsreader), \"Times New Roman\", serif",
+          "font-mono": "var(--font-jetbrains-mono), ui-monospace, monospace",
+          "ease-entrance": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+          "ease-loop": "cubic-bezier(0.42, 0, 0.58, 1)",
+          "shadow-float": "0px 24px 48px -24px rgba(27, 25, 22, 0.22)",
+          "shadow-dialog": "0px 40px 80px -32px rgba(15, 14, 13, 0.35)",
+          "shadow-window": "0px 24px 64px -24px rgba(27, 25, 22, 0.28)",
+          "animate-rise": "rise var(--dur-reveal) cubic-bezier(0.22, 1, 0.36, 1) both",
+          "animate-rise-base": "rise var(--dur-base) cubic-bezier(0.22, 1, 0.36, 1) both",
+          "animate-fade": "fade var(--dur-base) ease-out both",
+          "animate-fade-fast": "fade var(--dur-fast) cubic-bezier(0.25, 0.1, 0.25, 1) both",
+          "text-display-wordmark": "288px",
+          "text-display-wordmark--line-height": "240px",
+          "text-display-wordmark--letter-spacing": "-11.52px",
+          "text-display-wordmark--font-weight": "470",
+          "text-display-xl": "120px",
+          "text-display-xl--line-height": "114px",
+          "text-display-xl--letter-spacing": "-4.8px",
+          "text-display-xl--font-weight": "470",
+          "text-headline-xl": "72px",
+          "text-headline-xl--line-height": "72px",
+          "text-headline-xl--letter-spacing": "-2.88px",
+          "text-headline-xl--font-weight": "470",
+          "text-headline": "48px",
+          "text-headline--line-height": "50px",
+          "text-headline--letter-spacing": "-1.68px",
+          "text-headline--font-weight": "470",
+          "text-feature-title": "40px",
+          "text-feature-title--line-height": "42px",
+          "text-feature-title--letter-spacing": "-1.2px",
+          "text-feature-title--font-weight": "470",
+          "text-display-serif": "64px",
+          "text-display-serif--line-height": "64px",
+          "text-display-serif--letter-spacing": "2.56px",
+          "text-display-serif--font-weight": "400",
+          "text-numeral": "120px",
+          "text-numeral--line-height": "96px",
+          "text-numeral--letter-spacing": "-4.8px",
+          "text-numeral--font-weight": "470",
+          "text-section-title": "48px",
+          "text-section-title--line-height": "50px",
+          "text-section-title--letter-spacing": "-1.68px",
+          "text-section-title--font-weight": "470",
+          "text-lead": "22px",
+          "text-lead--line-height": "32px",
+          "text-lead--letter-spacing": "-0.22px",
+          "text-lead--font-weight": "420",
+          "text-card-title": "28px",
+          "text-card-title--line-height": "32px",
+          "text-card-title--letter-spacing": "-0.7px",
+          "text-card-title--font-weight": "470",
+          "text-stat": "40px",
+          "text-stat--line-height": "40px",
+          "text-stat--letter-spacing": "-1.2px",
+          "text-stat--font-weight": "470",
+          "text-letter": "24px",
+          "text-letter--line-height": "32px",
+          "text-letter--letter-spacing": "0px",
+          "text-letter--font-weight": "400",
+          "text-quote": "20px",
+          "text-quote--line-height": "29px",
+          "text-quote--letter-spacing": "-0.2px",
+          "text-quote--font-weight": "420",
+          "text-input-text": "19px",
+          "text-input-text--line-height": "26px",
+          "text-input-text--letter-spacing": "-0.19px",
+          "text-input-text--font-weight": "400",
+          "text-body": "16px",
+          "text-body--line-height": "25px",
+          "text-body--letter-spacing": "-0.08px",
+          "text-body--font-weight": "420",
+          "text-label": "15px",
+          "text-label--line-height": "20px",
+          "text-label--letter-spacing": "-0.08px",
+          "text-label--font-weight": "500",
+          "text-small": "14px",
+          "text-small--line-height": "20px",
+          "text-small--letter-spacing": "0px",
+          "text-small--font-weight": "420",
+          "text-field-label": "13px",
+          "text-field-label--line-height": "18px",
+          "text-field-label--letter-spacing": "0px",
+          "text-field-label--font-weight": "420",
+          "text-badge": "11.5px",
+          "text-badge--line-height": "14px",
+          "text-badge--letter-spacing": "0.92px",
+          "text-badge--font-weight": "500",
+          "text-eyebrow": "15px",
+          "text-eyebrow--line-height": "20px",
+          "text-eyebrow--letter-spacing": "2.1px",
+          "text-eyebrow--font-weight": "400",
+          "text-caption": "12px",
+          "text-caption--line-height": "16px",
+          "text-caption--letter-spacing": "1.68px",
+          "text-caption--font-weight": "400"
+        },
+        "light": {
+          "surface-000": "#fbfaf8",
+          "surface-100": "#f2f0ec",
+          "surface-200": "#e8e5df",
+          "surface-inverse": "#0f0e0d",
+          "glass": "rgba(251, 250, 248, 0.78)",
+          "ink": "#1b1916",
+          "ink-hover": "#3a3530",
+          "ink-muted": "#6a645e",
+          "ink-display-muted": "#8f8982",
+          "ink-unread": "#d5d1cb",
+          "ink-inverse": "#fbfaf8",
+          "stone": "#a39d96",
+          "ochre": "#8a6420",
+          "ochre-tint": "#f1e7d3",
+          "red": "#8f2a24",
+          "red-tint": "#f3e1de",
+          "on-media": "#fbfaf8",
+          "on-media-ink": "#1b1916",
+          "hairline": "rgba(27, 25, 22, 0.14)",
+          "hairline-strong": "rgba(27, 25, 22, 0.32)",
+          "background": "#fbfaf8",
+          "foreground": "#1b1916",
+          "card": "#f2f0ec",
+          "card-foreground": "#1b1916",
+          "popover": "#fbfaf8",
+          "popover-foreground": "#1b1916",
+          "primary": "#1b1916",
+          "primary-foreground": "#fbfaf8",
+          "primary-hover": "#3a3530",
+          "secondary": "#f2f0ec",
+          "secondary-foreground": "#1b1916",
+          "muted": "#f2f0ec",
+          "muted-foreground": "#6a645e",
+          "accent": "#f2f0ec",
+          "accent-foreground": "#1b1916",
+          "destructive": "#8f2a24",
+          "destructive-foreground": "#fbfaf8",
+          "destructive-text": "#8f2a24",
+          "border": "rgba(27, 25, 22, 0.14)",
+          "input": "rgba(27, 25, 22, 0.32)",
+          "ring": "#8a6420",
+          "mark": "#8a6420",
+          "mark-tint": "#f1e7d3",
+          "space-1": "4px",
+          "space-2": "8px",
+          "space-3": "16px",
+          "space-4": "32px",
+          "space-5": "64px",
+          "space-6": "144px",
+          "radius": "0px",
+          "radius-none": "0px",
+          "radius-pill": "999px",
+          "dur-fast": "150ms",
+          "dur-base": "300ms",
+          "dur-reveal": "700ms",
+          "dur-entrance": "900ms",
+          "dur-loop": "1750ms",
+          "delay-1": "200ms",
+          "delay-2": "300ms",
+          "delay-3": "450ms",
+          "dur-overlay": "400ms",
+          "dur-ring": "10000ms",
+          "dur-scrub": "120ms",
+          "dur-marquee": "80000ms",
+          "ease-entrance": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "ease-standard": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+          "ease-loop": "cubic-bezier(0.42, 0, 0.58, 1)",
+          "rise-sm": "16px",
+          "rise-md": "32px",
+          "bob": "10px",
+          "zoom-media": "1.03",
+          "blur-near": "4px",
+          "blur-far": "12px",
+          "tilt": "4deg",
+          "fan-overlap": "56px",
+          "shadow-float": "0px 24px 48px -24px rgba(27, 25, 22, 0.22)",
+          "shadow-dialog": "0px 40px 80px -32px rgba(15, 14, 13, 0.35)",
+          "shadow-window": "0px 24px 64px -24px rgba(27, 25, 22, 0.28)"
+        },
+        "dark": {
+          "surface-000": "#0f0e0d",
+          "surface-100": "#1b1916",
+          "surface-200": "#2a2622",
+          "surface-inverse": "#0f0e0d",
+          "glass": "rgba(15, 14, 13, 0.78)",
+          "ink": "#f2f0ec",
+          "ink-hover": "#d9d5ce",
+          "ink-muted": "#a6a09a",
+          "ink-display-muted": "#7d7771",
+          "ink-unread": "#45403b",
+          "ink-inverse": "#fbfaf8",
+          "stone": "#58524c",
+          "ochre": "#d1a65c",
+          "ochre-tint": "#2e2414",
+          "red": "#b0402f",
+          "red-tint": "#2a1513",
+          "on-media": "#fbfaf8",
+          "on-media-ink": "#1b1916",
+          "hairline": "rgba(242, 240, 236, 0.14)",
+          "hairline-strong": "rgba(242, 240, 236, 0.32)",
+          "background": "#0f0e0d",
+          "foreground": "#f2f0ec",
+          "card": "#1b1916",
+          "card-foreground": "#f2f0ec",
+          "popover": "#1b1916",
+          "popover-foreground": "#f2f0ec",
+          "primary": "#f2f0ec",
+          "primary-foreground": "#0f0e0d",
+          "primary-hover": "#d9d5ce",
+          "secondary": "#2a2622",
+          "secondary-foreground": "#f2f0ec",
+          "muted": "#1b1916",
+          "muted-foreground": "#a6a09a",
+          "accent": "#2a2622",
+          "accent-foreground": "#f2f0ec",
+          "destructive": "#b0402f",
+          "destructive-foreground": "#fbfaf8",
+          "destructive-text": "#f2f0ec",
+          "border": "rgba(242, 240, 236, 0.14)",
+          "input": "rgba(242, 240, 236, 0.32)",
+          "ring": "#d1a65c",
+          "mark": "#d1a65c",
+          "mark-tint": "#2e2414"
+        }
+      },
+      "css": {
+        "@keyframes rise": {
+          "from": {
+            "opacity": "0",
+            "transform": "translateY(var(--rise-sm))"
+          },
+          "to": {
+            "opacity": "1",
+            "transform": "none"
+          }
+        },
+        "@keyframes fade": {
+          "from": {
+            "opacity": "0"
+          },
+          "to": {
+            "opacity": "1"
+          }
+        },
+        "@layer base": {
+          "body": {
+            "font-weight": "420"
+          }
+        }
+      },
+      "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/button.json",
+        "http://localhost:3000/r/icon-button.json",
+        "http://localhost:3000/r/link.json",
+        "http://localhost:3000/r/input.json",
+        "http://localhost:3000/r/textarea.json",
+        "http://localhost:3000/r/select.json",
+        "http://localhost:3000/r/checkbox.json",
+        "http://localhost:3000/r/radio-group.json",
+        "http://localhost:3000/r/switch.json",
+        "http://localhost:3000/r/label.json",
+        "http://localhost:3000/r/badge.json",
+        "http://localhost:3000/r/avatar.json",
+        "http://localhost:3000/r/card.json",
+        "http://localhost:3000/r/separator.json",
+        "http://localhost:3000/r/alert.json",
+        "http://localhost:3000/r/toast.json",
+        "http://localhost:3000/r/tooltip.json",
+        "http://localhost:3000/r/dialog.json"
+      ]
+    }
+  ]
+}

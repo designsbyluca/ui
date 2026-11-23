@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "An on/off toggle: a 44 × 24px rectangle with a square thumb.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils",
+    "http://localhost:3000/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/switch.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Switch as SwitchPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * An on/off toggle for settings that apply at once: a 44 × 24px rectangle with a square thumb.\n * Off: quiet track, muted thumb on the left. On: near-black track, off-white thumb on the right.\n */\nfunction Switch({ className, ...props }: React.ComponentProps<typeof SwitchPrimitive.Root>) {\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      className={cn(\n        \"peer relative inline-block h-6 w-11 shrink-0 cursor-pointer rounded-none border border-input bg-surface-200 p-0\",\n        \"transition-[background-color,border-color] duration-(--dur-base) ease-standard\",\n        \"hover:border-muted-foreground\",\n        \"focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ring\",\n        \"disabled:cursor-not-allowed disabled:border-dashed disabled:bg-transparent\",\n        \"data-[state=checked]:border-primary data-[state=checked]:bg-primary\",\n        \"aria-invalid:border-destructive\",\n        className\n      )}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        data-slot=\"switch-thumb\"\n        className={cn(\n          \"pointer-events-none absolute top-[3px] left-[3px] block size-4 rounded-none bg-muted-foreground\",\n          \"transition-transform duration-(--dur-base) ease-entrance\",\n          \"data-[state=checked]:translate-x-5 data-[state=checked]:bg-primary-foreground\",\n          // Disabled thumb is stone, on or off.\n          \"in-disabled:bg-stone in-disabled:data-[state=checked]:bg-stone\"\n        )}\n      />\n    </SwitchPrimitive.Root>\n  );\n}\n\nexport { Switch };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

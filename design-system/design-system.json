@@ -1,0 +1,34 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "at": "2026-11-16T17:37:56Z",
+    "v": 1
+  },
+  "title": "designsbyluca Design System",
+  "namespace": "DesignsByLuca",
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18"
+    },
+    {
+      "name": "react-dom",
+      "version": "18"
+    }
+  ],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "designsbyluca",
+    "at": "2026-11-23T11:47:00Z",
+    "via": "Cowork",
+    "note": "Round radio buttons; state grids reflow instead of squeezing (Textarea, Switch in two columns); wide blocks lay out at 1200px; wordmark fit fixed"
+  }
+}

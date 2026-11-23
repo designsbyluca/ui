@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "link",
+  "title": "Link",
+  "description": "A text link with a 1px line below that thickens to 2px on hover.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "http://localhost:3000/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/link.tsx",
+      "content": "import * as React from \"react\";\nimport { Slot } from \"radix-ui\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst linkVariants = cva(\n  [\n    \"group/link inline-flex items-baseline gap-2 rounded-none border-b border-b-current pb-0.5 font-medium no-underline\",\n    \"transition-[color,border-color] duration-(--dur-fast) ease-standard\",\n    \"hover:border-b-2 hover:pb-px\",\n    \"focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring\",\n    \"aria-disabled:pointer-events-none aria-disabled:border-dashed aria-disabled:text-muted-foreground aria-disabled:opacity-60\",\n  ],\n  {\n    variants: {\n      variant: {\n        default: \"text-foreground\",\n        // Footer and legal links: the line only on hover.\n        muted: \"border-b-transparent text-muted-foreground hover:border-b-current hover:text-foreground\",\n      },\n    },\n    defaultVariants: { variant: \"default\" },\n  }\n);\n\ninterface LinkProps extends React.ComponentProps<\"a\">, VariantProps<typeof linkVariants> {\n  /** Opens in a new tab and adds ↗. */\n  external?: boolean;\n  /** Adds → for \"continue\" links. */\n  arrow?: boolean;\n  asChild?: boolean;\n}\n\n/** A text link with a 1px line below that thickens to 2px on hover. Use Button for actions. */\nfunction Link({ className, variant, external, arrow, asChild, children, target, rel, ...props }: LinkProps) {\n  const classes = cn(linkVariants({ variant }), className);\n  if (asChild) {\n    return (\n      <Slot.Root data-slot=\"link\" className={classes} {...(props as React.ComponentProps<typeof Slot.Root>)}>\n        {children}\n      </Slot.Root>\n    );\n  }\n  const icon = external ? \"↗\" : arrow ? \"→\" : null;\n  return (\n    <a\n      data-slot=\"link\"\n      className={classes}\n      target={external ? (target ?? \"_blank\") : target}\n      rel={external ? (rel ?? \"noopener noreferrer\") : rel}\n      {...props}\n    >\n      {children}\n      {icon ? (\n        <span\n          aria-hidden=\"true\"\n          className=\"inline-block no-underline transition-transform duration-(--dur-fast) ease-standard group-hover/link:translate-x-0.5\"\n        >\n          {icon}\n        </span>\n      ) : null}\n    </a>\n  );\n}\n\nexport { Link, linkVariants, type LinkProps };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

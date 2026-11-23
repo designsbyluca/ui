@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "A multi-line field in a very fine frame.",
+  "registryDependencies": [
+    "utils",
+    "http://localhost:3000/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/textarea.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** A multi-line field in a very fine frame, 144px high to start. Resizes vertically. */\nfunction Textarea({ className, rows = 4, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      rows={rows}\n      className={cn(\n        \"box-border block min-h-36 w-full min-w-0 resize-y rounded-none border border-border bg-background px-5 py-[18px]\",\n        \"font-sans text-[17px] leading-[26px] tracking-[-0.01em] text-foreground placeholder:text-stone\",\n        \"transition-[border-color,background-color] duration-(--dur-fast) ease-standard\",\n        \"hover:border-input\",\n        \"focus:border-foreground focus:outline-2 focus:outline-offset-3 focus:outline-ring\",\n        \"disabled:cursor-not-allowed disabled:border-border disabled:bg-muted disabled:text-muted-foreground\",\n        \"aria-invalid:border-destructive aria-invalid:focus:border-b-2\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Textarea };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
