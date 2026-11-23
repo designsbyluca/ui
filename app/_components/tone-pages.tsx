@@ -10,6 +10,7 @@ import { Wordmark } from "@/registry/designsbyluca/blocks/wordmark";
 import { Button } from "@/registry/designsbyluca/ui/button";
 import { Kicker } from "@/registry/designsbyluca/ui/kicker";
 import { Photo } from "@/registry/designsbyluca/ui/photo";
+import { kessler, linden } from "@/app/_components/photos";
 
 /* Two example pages built only from the blocks, one per tone. Each sets
    data-tone on its own root; on a real site it sits on <html>, and a page
@@ -59,7 +60,8 @@ export function CalmPage() {
           cta={{ label: "Request a quote" }}
         />
         <Hero
-          image
+          image={kessler.hero}
+          imageAlt="A sofa by a window, afternoon light on the wall"
           animate
           title="Rooms that feel"
           muted="like a deep breath."
@@ -90,10 +92,10 @@ export function CalmPage() {
       </section>
 
       <section className="relative isolate mt-36 flex min-h-[80svh] items-end overflow-hidden text-ink-inverse">
-        <Photo tone="dark" label={false} className="absolute inset-0 -z-20" />
+        <Photo src={kessler.light} alt="A room with a wooden floor under a skylight" className="absolute inset-0 -z-20" />
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(15,14,13,0.7),rgba(15,14,13,0)_55%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(15,14,13,0.8),rgba(15,14,13,0.45)_35%,rgba(15,14,13,0)_65%)]"
         />
         <h2 className="mx-auto m-0 w-full max-w-[1440px] px-5 pb-16 text-[40px] leading-[42px] font-[480] tracking-[-0.03em] md:px-16 md:pb-20 md:text-[72px] md:leading-[72px]">
           Light first.
@@ -108,9 +110,10 @@ export function CalmPage() {
           duration={4000}
           label="Case story: a physiotherapy practice"
           slides={[
-            { title: "Calm. Bright.", caption: "Physiotherapy practice, Berlin, 2026", media: <Photo tone="dark" label={false} /> },
-            { text: "The old rooms were dark, loud and hard to clean." },
-            { text: "Now the light comes first, and every surface can be wiped in a minute.", bg: "#2a2521" },
+            { title: "Calm. Bright.", caption: "Physiotherapy practice, Berlin, 2026", media: kessler.case[0] },
+            { text: "The old rooms were dark, loud and hard to clean.", media: kessler.case[1] },
+            { text: "Oak, linen and lime plaster: materials that age well and wipe clean.", media: kessler.case[2] },
+            { text: "Now the light comes first, and the plants do well too.", media: kessler.case[3] },
           ]}
         />
       </section>
@@ -122,9 +125,9 @@ export function CalmPage() {
         <TestimonialRail
           items={[
             { quote: "“The practice opened on the day we had planned, and it still looks new a year later.”", name: "Sample client", role: "Practice, Berlin" },
-            { media: true },
+            { media: kessler.rail[0], alt: "Beige linen, close up" },
             { quote: "“She listened first and drew second. That was new for us.”", name: "Sample client", role: "Studio, Leipzig" },
-            { media: true },
+            { media: kessler.rail[1], alt: "Vertical wooden slats, close up" },
           ]}
         />
       </section>
@@ -165,7 +168,7 @@ export function FactualPage() {
         </Wordmark>
 
         <section className="mx-auto max-w-[1440px] px-5 pt-24 md:px-16">
-          <Photo className="aspect-[16/9] rounded-surface" label="Product screenshot" />
+          <Photo src={linden.office} alt="A quiet office: a desk, a chair and a laptop" className="aspect-[16/9] rounded-surface" />
         </section>
 
         <FeatureStack
@@ -176,6 +179,7 @@ export function FactualPage() {
               kicker: "Booking",
               title: "Patients book themselves.",
               title2: "The phone stays quiet.",
+              media: linden.stack[0],
               text: ["Open slots go online the moment you set your hours.", "Changes and cancellations work the same way."],
               actions: (
                 <>
@@ -188,6 +192,7 @@ export function FactualPage() {
               kicker: "Reminders",
               title: "A text the day before.",
               title2: "Fewer empty chairs.",
+              media: linden.stack[1],
               text: "Reminders go out by text and email, in the patient's language.",
               actions: <Button variant="outline">See an example</Button>,
             },
@@ -195,6 +200,7 @@ export function FactualPage() {
               kicker: "Waiting list",
               title: "A free slot never stays free.",
               title2: "The next person gets it.",
+              media: linden.stack[2],
               text: "When someone cancels, the first person on the list is asked, then the next.",
               actions: <Button variant="outline">Learn more</Button>,
             },
@@ -206,10 +212,10 @@ export function FactualPage() {
           <StatTiles
             scatter
             items={[
-              { value: "38", label: "clinics in the beta", image: true },
+              { value: "38", label: "clinics in the beta", image: linden.stats[0] },
               { value: "2 min", label: "to set up a new room" },
               { value: "−31 %", label: "missed appointments after three months" },
-              { value: "24/7", label: "online booking", image: true },
+              { value: "24/7", label: "online booking", image: linden.stats[1] },
             ]}
           />
         </section>
@@ -222,10 +228,10 @@ export function FactualPage() {
             rows
             items={[
               { quote: "“We used to spend the first hour of the day on the phone. Now we spend it with patients.”", name: "Sample user", role: "Physiotherapy" },
-              { media: true },
+              { media: linden.rail[0], alt: "A room with a chair by a window" },
               { quote: "“Set up on a Friday, fully booked online by Monday.”", name: "Sample user", role: "Dental practice" },
               { quote: "“The waiting list alone pays for it.”", name: "Sample user", role: "Speech therapy" },
-              { media: true },
+              { media: linden.rail[1], alt: "A row of wooden chairs" },
               { quote: "“Our patients over seventy book online too. That surprised us.”", name: "Sample user", role: "General practice" },
             ]}
           />

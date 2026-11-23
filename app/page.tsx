@@ -6,6 +6,7 @@ import { ToastDemo } from "@/app/_components/toast-demo";
 import { ToneToggle } from "@/app/_components/tone-toggle";
 import { Photo } from "@/registry/designsbyluca/ui/photo";
 import { Kicker } from "@/registry/designsbyluca/ui/kicker";
+import { kessler, onMediaPhoto } from "@/app/_components/photos";
 import { CalmPage, FactualPage } from "@/app/_components/tone-pages";
 import { Alert, AlertDescription, AlertTitle } from "@/registry/designsbyluca/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/registry/designsbyluca/ui/avatar";
@@ -305,7 +306,7 @@ export default function Page() {
           <div>
             <Sub>On media</Sub>
             <div className="relative h-80 overflow-hidden rounded-surface bg-surface-inverse md:h-[440px]">
-              <Photo tone="dark" label={false} className="absolute inset-0" />
+              <Photo src={onMediaPhoto} alt="" className="absolute inset-0" />
               <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-center gap-4 p-8 md:p-12">
                 <Button onMedia arrow>
                   Request a quote
@@ -894,9 +895,7 @@ export default function Page() {
             </State>
             <State label="Editorial">
               <Card variant="editorial">
-                <CardMedia>
-                  <Photo />
-                </CardMedia>
+                <CardMedia src={kessler.card} alt="A white door with a window" />
                 <CardHeader>
                   <CardMeta>
                     <span>Case 04, Website</span>

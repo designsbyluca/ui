@@ -75,7 +75,7 @@ function Hero({
           {/* The dark gradient at the image edge that carries the white text. */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(15,14,13,0.78)_0%,rgba(15,14,13,0.35)_38%,rgba(15,14,13,0)_62%),linear-gradient(to_bottom,rgba(15,14,13,0.45)_0%,rgba(15,14,13,0)_22%)]"
+            className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(15,14,13,0.85)_0%,rgba(15,14,13,0.62)_40%,rgba(15,14,13,0.2)_72%,rgba(15,14,13,0)_90%),linear-gradient(to_right,rgba(15,14,13,0.5)_0%,rgba(15,14,13,0)_65%),linear-gradient(to_bottom,rgba(15,14,13,0.45)_0%,rgba(15,14,13,0)_22%)]"
           />
         </>
       )}
@@ -95,7 +95,7 @@ function Hero({
           </span>
           {muted && (
             <span
-              className={cn("block", onMedia ? "text-white/60" : "text-ink-display-muted")}
+              className={cn("block", onMedia ? "text-white/70" : "text-ink-display-muted")}
               style={a(2)}
             >
               {muted}

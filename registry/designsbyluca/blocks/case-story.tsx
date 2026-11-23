@@ -136,7 +136,13 @@ function CaseStory({
             ) : (
               <div className="absolute inset-0 -z-10 *:size-full *:object-cover">{s.media}</div>
             ))}
-          {s.media && <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[rgba(15,14,13,0.35)]" />}
+          {/* A scrim that keeps white text readable on light photos too. */}
+          {s.media && (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -z-10 bg-[radial-gradient(70%_70%_at_50%_50%,rgba(15,14,13,0.72),rgba(15,14,13,0.5))]"
+            />
+          )}
           <div className="relative max-w-[22em]">
             {s.title && (
               <p className="m-0 text-[48px] leading-[46px] font-[480] tracking-[-0.04em] md:text-[88px] md:leading-[84px] lg:text-[112px] lg:leading-[104px]">
