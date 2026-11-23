@@ -168,7 +168,7 @@ export function FactualPage() {
         </Wordmark>
 
         <section className="mx-auto max-w-[1440px] px-5 pt-24 md:px-16">
-          <Photo src={linden.office} alt="A quiet office: a desk, a chair and a laptop" className="aspect-[16/9] rounded-surface" />
+          <Photo src={linden.office} alt="A bright room with wooden stools and pale blinds" className="aspect-[16/9] rounded-surface" />
         </section>
 
         <FeatureStack
@@ -231,7 +231,7 @@ export function FactualPage() {
               { media: linden.rail[0], alt: "A room with a chair by a window" },
               { quote: "“Set up on a Friday, fully booked online by Monday.”", name: "Sample user", role: "Dental practice" },
               { quote: "“The waiting list alone pays for it.”", name: "Sample user", role: "Speech therapy" },
-              { media: linden.rail[1], alt: "A row of wooden chairs" },
+              { media: linden.rail[1], alt: "An office with white desks and black chairs" },
               { quote: "“Our patients over seventy book online too. That surprised us.”", name: "Sample user", role: "General practice" },
             ]}
           />

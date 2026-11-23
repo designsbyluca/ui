@@ -1,7 +1,10 @@
 /*
  * Photos for the preview page only (the registry blocks ship with the
- * placeholder). All from Unsplash under the Unsplash License: free to use,
- * no permission needed. Source page and photographer next to each one.
+ * placeholder). All from Unsplash under the Unsplash License
+ * (https://unsplash.com/license): free to use, no permission needed. Source
+ * page and photographer next to each one. Checked at full size for visible
+ * brand logos on 23.11.2026; the first office photo (a laptop logo) and a
+ * clinic photo (a sign and an air-conditioner logo) were replaced.
  */
 
 const unsplash = (id: string, width = 1600) =>
@@ -37,8 +40,8 @@ export const kessler = {
 /* ---------- Linden (factual): calm offices and details ---------- */
 
 export const linden = {
-  // https://unsplash.com/photos/ysoj_iZxfd0, mahmoud azmy: a desk with a chair and a laptop
-  office: unsplash("1705909770198-7e83c24e1616", 2400),
+  // https://unsplash.com/photos/XKm9AmmSn3I, lim woojung: a bright room with wooden stools and pale blinds
+  office: unsplash("1772751541531-e084e8f56630", 2400),
   stack: [
     // https://unsplash.com/photos/n205UbNhy7E, Marissa Grootes: a wireless keyboard on a white surface
     unsplash("1531347118459-c3ea7a5ac61e", 1400),
@@ -56,8 +59,8 @@ export const linden = {
   rail: [
     // https://unsplash.com/photos/P-8FjydEv3I, Bhuwan Bansal: a room with a chair and a window
     unsplash("1726456604802-03cd7494eb47", 900),
-    // https://unsplash.com/photos/uzEWY67n-xE, kimia kazemi: a row of wooden chairs
-    unsplash("1731514709874-30eead90613b", 900),
+    // https://unsplash.com/photos/afFpd6TaLhU, Craig Lovelidge: an office with white desks and black chairs
+    unsplash("1637665627832-dcd730049fbb", 900),
   ],
 };
 
