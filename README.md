@@ -18,8 +18,10 @@ The registry lives at `https://ui.designsbyluca.com/r`.
 Install everything at once, the theme and all 18 components:
 
 ```bash
-npx shadcn@latest add https://ui.designsbyluca.com/r/all.json
+npx shadcn@latest add https://ui.designsbyluca.com/r/all.json --overwrite
 ```
+
+`--overwrite` matters: `npx shadcn init` puts its own `button.tsx` in your project, and keeping it breaks `IconButton`, `Toast` and the `arrow` prop.
 
 Or one component at a time. Name the theme in the same command: shadcn only replaces existing variables such as `--primary` and `--radius` when you ask for a theme directly. A component brings the components it builds on.
 
@@ -108,3 +110,5 @@ REGISTRY_URL=http://localhost:3000/r npm run registry
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
+
+Designed and maintained by designsbyluca.

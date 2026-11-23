@@ -849,7 +849,7 @@ export default function Page() {
                   <CardTitle>A practice that feels like the room</CardTitle>
                   <CardDescription>Website and booking for a physiotherapy practice.</CardDescription>
                 </CardHeader>
-                <CardContent>Personal support meets custom code. Online two weeks after the first call.</CardContent>
+                <CardContent>Personal support from the first call. Online two weeks later.</CardContent>
                 <CardFooter>
                   <Button variant="link" arrow>
                     Read the case
@@ -861,7 +861,7 @@ export default function Page() {
               <Card variant="outline">
                 <CardHeader>
                   <CardTitle>Website</CardTitle>
-                  <CardDescription>Design and build, by hand.</CardDescription>
+                  <CardDescription>Design and build in one place.</CardDescription>
                   <CardAction>
                     <IconButton size="sm" variant="ghost" aria-label="Add to request" icon={PLUS} />
                   </CardAction>

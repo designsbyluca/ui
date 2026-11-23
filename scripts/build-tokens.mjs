@@ -56,9 +56,10 @@ const themeVars = {
   // Square: every rounded-* is 0. rounded-full stays round for avatars and radios.
   ...Object.fromEntries(["xs", "sm", "md", "lg", "xl", "2xl"].map((s) => [`radius-${s}`, "var(--radius)"])),
   "radius-pill": "999px",
-  "font-sans": 'var(--font-inter-tight), "Helvetica Neue", Arial, sans-serif',
-  "font-serif": 'var(--font-newsreader), "Times New Roman", serif',
-  "font-mono": "var(--font-jetbrains-mono), ui-monospace, monospace",
+  // The fallback sits inside var(): a missing variable would otherwise void the whole list.
+  "font-sans": 'var(--font-inter-tight, "Helvetica Neue"), "Helvetica Neue", Arial, sans-serif',
+  "font-serif": 'var(--font-newsreader, "Times New Roman"), "Times New Roman", serif',
+  "font-mono": "var(--font-jetbrains-mono, ui-monospace), ui-monospace, monospace",
   // Literal values (not var()) so they never point at themselves.
   ...Object.fromEntries(Object.entries(ease).map(([k, v]) => [k, v])),
   ...Object.fromEntries(Object.entries(shadows).map(([k, v]) => [k, v])),
